@@ -17,13 +17,13 @@ public class Cliente {
 	@Id
 	private int idcliente;
 
-	// @Column
+	@Column
 	private String nombre;
 
-	// @Column
+	@Column
 	private String description;
 
-	// @Column
+	@Column
 	private String logo;
 
 	public Cliente() {

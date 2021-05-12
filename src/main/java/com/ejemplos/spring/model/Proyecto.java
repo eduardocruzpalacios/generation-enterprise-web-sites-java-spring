@@ -17,22 +17,22 @@ public class Proyecto {
 	@Id
 	private int idproyecto;
 
-	// @Column
+	@Column
 	private String proyecto;
 
-	// @Column
+	@Column
 	private String fechafin;
 
-	// @Column
+	@Column
 	private String resumen;
 
-	// @Column
+	@Column
 	private String descripcion;
 
-	// @Column
+	@Column
 	private String imagen;
 
-	// @Column
+	@Column
 	private int empresa;
 
 	public Proyecto() {

@@ -7,8 +7,6 @@
 
 package com.ejemplos.spring.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +21,7 @@ public class ProyectoController {
 	private ProyectoService proyectoService;
 
 	// Listar Proyectos
-	@GetMapping("/")
+	@GetMapping("/proyectos")
 	public String getProyectos(Model model) {
 		model.addAttribute("listarProyectos", proyectoService.findAll());
 		return "ListarProyectos";
