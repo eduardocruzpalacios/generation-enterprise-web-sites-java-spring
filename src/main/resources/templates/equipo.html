@@ -16,6 +16,21 @@
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
+
+    <h2>Equipo</h2>
+
+    <section id="equipo">
+
+        <div>
+            <p text="${equipo.nombre}" />
+            <p text="${equipo.fechafin}" />
+            <p text="${equipo.apellidos}" />
+            <p text="${equipo.resumen}" />
+            <img th:src="${equipo.foto}"/ th:alt="${equipo.nombre}"/>
+            <p text="${cargos.cargo}" />
+        </div>
+
+    </section>
     
 </body>
 </html>
