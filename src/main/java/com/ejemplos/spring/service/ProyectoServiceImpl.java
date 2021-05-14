@@ -27,7 +27,7 @@ public class ProyectoServiceImpl implements ProyectoService {
 	public List<Proyecto> findAll() {
 
 		RestTemplate restTemplate = new RestTemplate();
-		Proyecto[] proyectos = restTemplate.getForObject("http://localhost:5000/proyectos", Proyecto[].class);
+		Proyecto[] proyectos = restTemplate.getForObject("http://localhost:5000/listarproyectos", Proyecto[].class);
 		List<Proyecto> listaProyectos = Arrays.asList(proyectos);
 		return listaProyectos;
 
