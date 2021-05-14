@@ -27,7 +27,7 @@ public class PersonaServiceImpl implements PersonaService {
 	public List<Persona> findAll() {
 
 		RestTemplate restTemplate = new RestTemplate();
-		Persona[] personas = restTemplate.getForObject("http://localhost:5000/personas", Persona[].class);
+		Persona[] personas = restTemplate.getForObject("http://localhost:5000/equipo", Persona[].class);
 		List<Persona> listaPersonas = Arrays.asList(personas);
 		return listaPersonas;
 

@@ -15,8 +15,8 @@
     <nav>
         <ul>
             <li><a href="home.html">Home</a></li>
-            <li><a href="proyectos.html">Proyectos</a></li>
-            <li><a href="equipo.html" class="actual">Equipo</a></li>
+            <li><a href="proyectos">Proyectos</a></li>
+            <li><a href="equipo" class="actual">Equipo</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
@@ -25,14 +25,36 @@
 
     <section id="equipo">
 
-        <div>
+
+        <table>
+
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Resumen</th>
+                <th>Foto</th>
+                <th>Cargo</th>
+            </tr>
+
+            <tr th:each="persona: ${listarPersonas}">
+
+                <td th:text="${persona.nombre}" />
+                <td th:text="${persona.apellidos}" />
+                <td th:text="${persona.resumen}" />
+                <td th:text="${persona.foto}" />
+                <td th:text="${persona.cargo}" />
+
+            </tr>
+
+        </table>        
+        <!--<div>
             <p text="${equipo.nombre}" />
             <p text="${equipo.fechafin}" />
             <p text="${equipo.apellidos}" />
             <p text="${equipo.resumen}" />
             <img th:src="${equipo.foto}"/ th:alt="${equipo.nombre}"/>
             <p text="${cargos.cargo}" />
-        </div>
+        </div>-->
 
     </section>
     

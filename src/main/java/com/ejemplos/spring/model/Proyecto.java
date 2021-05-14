@@ -7,32 +7,34 @@
 
 package com.ejemplos.spring.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "proyectos")
 public class Proyecto {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idproyecto;
 
-	@Column
 	private String proyecto;
 
-	@Column
 	private String fechafin;
 
-	@Column
 	private String resumen;
 
-	@Column
 	private String descripcion;
 
-	@Column
 	private String imagen;
 
-	@Column
+	@ManyToOne
+	@JoinColumn(name = "empresa")
 	private Cliente cliente;
 
 	public Proyecto() {
@@ -114,3 +116,4 @@ public class Proyecto {
 	}
 
 }
+

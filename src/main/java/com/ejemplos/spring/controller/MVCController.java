@@ -18,7 +18,7 @@ public class MVCController {
 	
 	private static final Logger log = LoggerFactory.getLogger(MVCController.class);
 
-	/*@Autowired
+	@Autowired
 	private CargoService cargoService;
 
 	// listar las cargos
@@ -36,7 +36,7 @@ public class MVCController {
 	public String getClientes(Model model) {
 		model.addAttribute("listarClientes", clienteService.findAll());
 		return "ListarClientes";
-	}*/
+	}
 
 	@Autowired
 	private PersonaService personaService;
@@ -54,8 +54,10 @@ public class MVCController {
 	// Listar Proyectos
 	@GetMapping("/proyectos")
 	public String getProyectos(Model model) {
-		//log.info("----" + proyectoService.findAll());
+		log.info("----" + proyectoService.findAll());
 		model.addAttribute("listaProyectos", proyectoService.findAll());
 		return "proyectos";
 	}
+	
+	
 }
