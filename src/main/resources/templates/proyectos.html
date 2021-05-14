@@ -27,14 +27,29 @@
 
     <section id="proyectos">
 
-        <div>
-            <p text="${proyectos.proyecto}" />
-            <p text="${proyectos.fechafin}" />
-            <p text="${proyectos.resumen}" />
-            <p text="${proyectos.descripcion}" />
-            <img th:src="${proyectos.imagen}"/ th:alt="${proyectos.proyecto}"/>
-            <p text="${clientes.nombre}" />
-        </div>
+        <table>
+
+            <tr>
+                <th>Proyecto</th>
+                <th>Fecha fin</th>
+                <th>Resumen</th>
+                <th>Descripciones</th>
+                <th>Imagen</th>
+                <th>Cliente</th>
+            </tr>
+
+            <tr th:each="proyectos, clientes: ${proyectos}">
+
+                <td th:text="${proyectos.proyecto}" />
+                <td th:text="${proyectos.fechafin}" />
+                <td th:text="${proyectos.resumen}" />
+                <td th:text="${proyectos.descripcion}" />
+                <td th:text="${proyectos.imagen}" />
+                <td th:text="${pclientes.nombre}" />
+
+            </tr>
+
+        </table>
 
     </section>
 
