@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+
+VARIABLES PARA COLORES/TAMAÑOS
+
+:root {
+    --nombreVariable: valor;
+    
+    --blanco: #fff;
+
+    --grande: 4rem;
+}
+
+LLAMADA A VARIABLES
+
+selector {
+    propiedad: var(--nombreVariable);
+    font-size: var(--grande);
+}
+
+*/
+
+/* media queries reference */
+
+/* MQ MOBILE */
+@media (max-width: 687px) {
+    
+}
+
+/* MQ TABLET */
+@media (min-width: 688px) and (max-width: 992px) {
+  
+}
+
+/* MQ PC */
+@media (min-width: 993px) {
+  
+}
+
+/* MQ XL screens */
+@media (min-width: 1312px) {
+    
+}
