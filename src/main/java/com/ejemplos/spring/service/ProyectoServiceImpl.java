@@ -1,7 +1,14 @@
 /*
- * @Author Maria y Andrei
- * @Version 1.0
- */
+
+*Fecha: 14/05/2021
+
+*@Author NextoMarket
+
+*@Version 1.0
+
+*
+
+*/
 
 package com.ejemplos.spring.service;
 
@@ -24,6 +31,14 @@ public class ProyectoServiceImpl implements ProyectoService {
 		List<Proyecto> listaProyectos = Arrays.asList(proyectos);
 		return listaProyectos;
 
+	}
+
+	// Método para guardar
+	public Proyecto save() {
+		RestTemplate restTemplateSave = new RestTemplate();
+		Proyecto proyectos2 = new Proyecto();
+		Proyecto p = restTemplateSave.postForObject("http://localhost:5000/addproyectos", proyectos2, Proyecto.class);
+		return p;
 	}
 
 }

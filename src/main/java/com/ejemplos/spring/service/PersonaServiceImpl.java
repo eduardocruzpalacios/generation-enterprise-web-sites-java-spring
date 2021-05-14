@@ -18,6 +18,7 @@ import java.util.List;
 import org.springframework.web.client.RestTemplate;
 
 import com.ejemplos.spring.model.Persona;
+import com.ejemplos.spring.model.Proyecto;
 
 public class PersonaServiceImpl implements PersonaService {
 
@@ -30,4 +31,9 @@ public class PersonaServiceImpl implements PersonaService {
 		return listaPersonas;
 
 	}
+	
+	
+		
+		
+	
 }
