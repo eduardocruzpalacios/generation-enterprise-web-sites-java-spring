@@ -1,5 +1,7 @@
 package com.ejemplos.spring.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +12,11 @@ import com.ejemplos.spring.service.ClienteService;
 import com.ejemplos.spring.service.PersonaService;
 import com.ejemplos.spring.service.ProyectoService;
 
+
 @Controller
 public class MVCController {
+	
+	private static final Logger log = LoggerFactory.getLogger(MVCController.class);
 
 	/*@Autowired
 	private CargoService cargoService;
@@ -49,7 +54,8 @@ public class MVCController {
 	// Listar Proyectos
 	@GetMapping("/proyectos")
 	public String getProyectos(Model model) {
-		model.addAttribute("listarProyectos", proyectoService.findAll());
+		//log.info("----" + proyectoService.findAll());
+		model.addAttribute("listaProyectos", proyectoService.findAll());
 		return "proyectos";
 	}
 }
