@@ -15,10 +15,12 @@ package com.ejemplos.spring.service;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.ejemplos.spring.model.Persona;
 
+@Service
 public class PersonaServiceImpl implements PersonaService {
 
 	// Metodo para listar
