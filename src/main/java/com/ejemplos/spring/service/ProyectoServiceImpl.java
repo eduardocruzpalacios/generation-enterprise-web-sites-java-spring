@@ -44,7 +44,13 @@ public class ProyectoServiceImpl implements ProyectoService {
 	}
 
 	@Override
-	public void deleteById(int idproyecto) {
+	public void deleteById(int idproyecto)
+	{
+	    RestTemplate restTemplate = new RestTemplate();
+	    restTemplate.delete("http://localhost:5000/eliminarproyecto/" + idproyecto);
+	}
+	
+	/*public void deleteById(int idproyecto) {
 		final String uri = "http://localhost:5000/eliminarproyectos/{idproyecto}";
 		RestTemplate restTemplate = new RestTemplate();
 
@@ -52,7 +58,7 @@ public class ProyectoServiceImpl implements ProyectoService {
 		params.put("idproyecto", idproyecto);
 
 		restTemplate.delete(uri, params);
-	}
+	}*7
 	
 	/*public void deleteById(int idproyecto) {
 
