@@ -41,4 +41,12 @@ public class ProyectoServiceImpl implements ProyectoService {
 		return p;
 	}
 
+	@Override
+	public Proyecto deleteById(int id) {
+		
+		RestTemplate restTemplateDeleteById = new RestTemplate();
+		restTemplateDeleteById.delete("http://localhost:5000/deleteproyecto/" + id);
+		return pD;
+	}
+
 }
