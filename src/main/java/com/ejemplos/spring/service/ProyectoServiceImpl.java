@@ -34,11 +34,10 @@ public class ProyectoServiceImpl implements ProyectoService {
 	}
 
 	// Método para guardar
-	public Proyecto save() {
-		
+	public Proyecto save(Proyecto proyecto) {
+
 		RestTemplate restTemplateSave = new RestTemplate();
-		Proyecto proyectos2 = new Proyecto();
-		Proyecto p = restTemplateSave.postForObject("http://localhost:5000/addproyectos", proyectos2, Proyecto.class);
+		Proyecto p = restTemplateSave.postForObject("http://localhost:5000/addproyectos", proyecto, Proyecto.class);
 		return p;
 	}
 

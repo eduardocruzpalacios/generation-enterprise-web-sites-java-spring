@@ -1,3 +1,15 @@
+
+/*
+
+*Fecha: 14/05/2021
+
+*@Author NextoMarket
+
+*@Version 1.0
+
+*
+
+*/
 package com.ejemplos.spring.controller;
 
 import org.slf4j.Logger;
@@ -6,7 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.ejemplos.spring.model.Proyecto;
 import com.ejemplos.spring.service.CargoService;
@@ -14,10 +27,9 @@ import com.ejemplos.spring.service.ClienteService;
 import com.ejemplos.spring.service.PersonaService;
 import com.ejemplos.spring.service.ProyectoService;
 
-
 @Controller
 public class MVCController {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(MVCController.class);
 
 	@Autowired
@@ -60,11 +72,10 @@ public class MVCController {
 		model.addAttribute("listaProyectos", proyectoService.findAll());
 		return "proyectos";
 	}
-	
-	//Guardar proyecto
-	/*@GetMapping("/guardarproyecto")
-	public String saveProyecto(Model model) {
-		model.addAttribute(proyectoService.)
-		return "proyectos";
-	}*/
+
+	// Guardar proyecto
+	@PostMapping
+	public Proyecto saveProyecto(@RequestBody Proyecto proyecto) {
+		return proyectoService.save(proyecto);
+	}
 }
