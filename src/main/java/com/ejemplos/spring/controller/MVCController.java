@@ -80,6 +80,8 @@ public class MVCController {
 		model.addAttribute("listaProyectos", proyectoService.findAll());
 		return "proyectos";
 	}
+	
+	
 
 	// Guardar proyecto
 	@PostMapping
@@ -107,9 +109,15 @@ public class MVCController {
 	 * ResponseEntity<>("Delete forever", HttpStatus.MOVED_PERMANENTLY); }
 	 */
 
-	@DeleteMapping(value = "/eliminarproyecto/{id}")
+	/*@DeleteMapping(value = "/eliminarproyecto/{id}")
 	public ResponseEntity<String> deleteProyecto(@PathVariable("id") int id) {
 		return new ResponseEntity<String>(HttpStatus.OK);
+	}*/
+	
+	@DeleteMapping("/eliminarproyecto/{idproyecto}")
+	public String deleteById(@PathVariable Integer idproyecto) {
+		proyectoService.deleteById(idproyecto);
+		return "redirect:/";
 	}
 
 	/*
@@ -134,10 +142,15 @@ public class MVCController {
 		return "adminequipo";
 	}
 	
+	@Autowired
+	private ProyectoService proyectoAdmin;
+	
 	@GetMapping("/adminproyectos")
-	public String getAdminProyectos() {
+	public String getAdminProyectos(Model model) {
+		model.addAttribute("listaProyectos", proyectoAdmin.findAll());
 		return "adminproyectos";
 	}
+	
 	
 	@GetMapping("/proyectoAddNuevo")
 	public String getAdminProyectoAddNuevo() {
