@@ -15,6 +15,8 @@ package com.ejemplos.spring.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,6 +24,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.ejemplos.spring.model.Proyecto;
 import com.ejemplos.spring.service.CargoService;
@@ -80,10 +86,66 @@ public class MVCController {
 	public Proyecto saveProyecto(@RequestBody Proyecto proyecto) {
 		return proyectoService.save(proyecto);
 	}
+
+	/*
+	 * Borrar proyecto
+	 * 
+	 * @GetMapping("/eliminarproyecto/{idproyecto}") public String
+	 * eliminarProyecto(Model model) { log.info("---- borrar");
+	 * model.addAttribute("listaproyectos", proyectoService.deleteById(idproyecto));
+	 * return "proyectos";
+	 * 
+	 * }
+	 */
+
+	/*
+	 * @RequestMapping(value = "/eliminarproyecto/{idproyecto}", method =
+	 * RequestMethod.DELETE) public ResponseEntity<String>
+	 * eliminarProyecto(@PathVariable Integer idproyecto, @RequestBody Proyecto p) {
+	 * log.info("------------------- borrar ");
+	 * proyectoService.deleteById(idproyecto); return new
+	 * ResponseEntity<>("Delete forever", HttpStatus.MOVED_PERMANENTLY); }
+	 */
+
+	@DeleteMapping(value = "/eliminarproyecto/{id}")
+	public ResponseEntity<String> deleteProyecto(@PathVariable("id") int id) {
+		return new ResponseEntity<String>(HttpStatus.OK);
+	}
+
+	/*
+	 * private static void deleteEmployee() { final String uri =
+	 * "http://localhost:8080/springrestexample/employees/{id}"; RestTemplate
+	 * restTemplate = new RestTemplate();
+	 * 
+	 * Map<String, String> params = new HashMap<String, String>(); params.put("id",
+	 * "2");
+	 * 
+	 * restTemplate.delete ( uri, params );
+	 * 
+	 */
+
+	@GetMapping("/admin")
+	public String getAdmin() {
+		return "admin";
+	}
 	
-	//Borrar proyecto
-	@DeleteMapping("/{id}")
-	public void eliminarProyecto(@PathVariable Integer id) {
-		proyectoService.delete(id);
+	@GetMapping("/adminequipo")
+	public String getAdminEquipo() {
+		return "adminequipo";
+	}
+	
+	@GetMapping("/adminproyectos")
+	public String getAdminProyectos() {
+		return "adminproyectos";
+	}
+	
+	@GetMapping("/proyectoAddNuevo")
+	public String getAdminProyectoAddNuevo() {
+		return "proyectoAddNuevo";
+	}
+	
+	@GetMapping("/equipoAddNuevo")
+	public String getAdminEquipoAddNuevo() {
+		return "equipoAddNuevo";
 	}
 }

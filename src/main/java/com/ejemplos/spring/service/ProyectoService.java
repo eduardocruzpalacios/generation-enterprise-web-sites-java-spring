@@ -25,6 +25,6 @@ public interface ProyectoService {
 	public Proyecto save(Proyecto proyecto);
 	
 	// Método para borrar
-	public Proyecto deleteById(int id);
+	public void deleteById(int id);
 
 }

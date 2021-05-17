@@ -13,7 +13,9 @@
 package com.ejemplos.spring.service;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -42,11 +44,22 @@ public class ProyectoServiceImpl implements ProyectoService {
 	}
 
 	@Override
-	public Proyecto deleteById(int id) {
-		
-		RestTemplate restTemplateDeleteById = new RestTemplate();
-		restTemplateDeleteById.delete("http://localhost:5000/deleteproyecto/" + id);
-		return pD;
+	public void deleteById(int idproyecto) {
+		final String uri = "http://localhost:5000/eliminarproyectos/{idproyecto}";
+		RestTemplate restTemplate = new RestTemplate();
+
+		Map<String, Integer> params = new HashMap<String, Integer>();
+		params.put("idproyecto", idproyecto);
+
+		restTemplate.delete(uri, params);
 	}
+	
+	/*public void deleteById(int idproyecto) {
+
+		RestTemplate restTemplateDeleteById = new RestTemplate();
+		restTemplateDeleteById.delete("http://localhost:5000/eliminarproyecto/" + idproyecto);
+	}*/
+
+	
 
 }
