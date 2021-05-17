@@ -1,3 +1,25 @@
+.contenedor-tabla{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+
+    padding: 10px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#equipo h2{
+    color: rgb(32, 32, 32);
+    padding: 10px;
+}
+
+th{
+    color: rgb(32, 32, 32);
+    padding: 10px;
+}
+
 /* MQ MOBILE */
 @media (max-width: 687px) {
     

@@ -17,38 +17,17 @@
     justify-content: center;
 }
 
-#menu-nav a{
+.menu-nav a{
     text-decoration: none;
     color: rgb(32, 32, 32);
     padding: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
 }
 
-#menu-nav a:hover{
+.menu-nav a:hover{
     color: rgb(32, 148, 163);
 }
-
-.contenedor-tabla{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: auto;
-
-    padding: 10px;
-
-    justify-content: center;
-    align-items: center;
-}
-
-#equipo h2{
-    color: rgb(32, 32, 32);
-    padding: 10px;
-}
-
-th{
-    color: rgb(32, 32, 32);
-    padding: 10px;
-}
-
 /*
 
 VARIABLES PARA COLORES/TAMAÑOS
