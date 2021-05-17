@@ -35,6 +35,7 @@
                 <th>Resumen</th>
                 <th>Foto</th>
                 <th>Cargo</th>
+                <th>Acciones</th>
             </tr>
 
             <tr th:each="persona: ${listarPersonas}">
@@ -44,6 +45,10 @@
                 <td th:text="${persona.resumen}" />
                 <td th:text="${persona.foto}" />
                 <td th:text="${persona.cargo}" />
+                <td><a class="boton" href="equipoModificar.html">Modificar </a>
+                    <a class="boton" href="#">Eliminar </a>
+
+                </td>
 
             </tr>
 
