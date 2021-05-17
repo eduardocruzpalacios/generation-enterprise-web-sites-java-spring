@@ -1,3 +1,33 @@
+.nombre-empresa{
+    display: flex;
+    width:100%;
+
+    justify-content: center;
+    align-items: center;
+ 
+    padding: 10px;
+    margin: auto;
+
+    background-color: #eeeeee;
+
+}
+
+h1{
+    font-family: 'Oswald', sans-serif;
+    color:#05476d;
+    font-size: 3rem;
+}
+
+.menu-nav{
+    background-color: #eeeeee;
+}
+
+.banner{
+    height:40rem;
+    background-image: url(../img/imagen_header.jpg);
+    background-size: cover;
+}
+
 /* MQ MOBILE */
 @media (max-width: 687px) {
     
