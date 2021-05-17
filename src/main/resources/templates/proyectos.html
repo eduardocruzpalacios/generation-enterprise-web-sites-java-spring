@@ -34,6 +34,7 @@
                 <th>Descripciones</th>
                 <th>Imagen</th>
                 <th>Cliente</th>
+                <th>Acciones</th>
             </tr>
 
             <tr th:each="proyecto: ${listaProyectos}">
@@ -44,12 +45,19 @@
                 <td th:text="${proyecto.descripcion}" />
                 <td th:text="${proyecto.imagen}" />
                 <td th:text="${proyecto.cliente}" />
+                <td>
+                    <a class="boton" href="proyectoModificar.html">Modificar </a>
+                    <a class="boton" href="#">Eliminar </a>
+                </td>
 
             </tr>
 
         </table>
 
         <a class="boton" href="proyectoAddNuevo.html">Añadir nuevo proyecto</a>
+
+
+
 
     </section>
 
