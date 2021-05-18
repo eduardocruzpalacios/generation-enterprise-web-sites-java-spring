@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.ejemplos.spring.model.Persona;
 import com.ejemplos.spring.model.Proyecto;
 import com.ejemplos.spring.service.CargoService;
 import com.ejemplos.spring.service.ClienteService;
@@ -61,6 +62,14 @@ public class MVCController {
 	public String getEquipo(Model model) {
 		model.addAttribute("listarPersonas", personaService.findAll());
 		return "equipo";
+	}
+
+	// Guardar persona
+	@GetMapping("/addpersona")
+	public String savePersona(Persona persona) {
+		log.info("----" + personaService.save(persona));
+		personaService.save(persona);
+		return "redirect:/adminequipo";
 	}
 
 	// Eliminar personas
@@ -105,6 +114,7 @@ public class MVCController {
 
 	@Autowired
 	private PersonaService personaAdmin;
+
 	@GetMapping("/adminequipo")
 	public String getAdminEquipo(Model model) {
 		model.addAttribute("listarPersonas", personaAdmin.findAll());
