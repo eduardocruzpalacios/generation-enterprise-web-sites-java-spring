@@ -15,19 +15,12 @@ package com.ejemplos.spring.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.ejemplos.spring.model.Proyecto;
 import com.ejemplos.spring.service.CargoService;
@@ -80,8 +73,6 @@ public class MVCController {
 		model.addAttribute("listaProyectos", proyectoService.findAll());
 		return "proyectos";
 	}
-	
-	
 
 	// Guardar proyecto
 	@PostMapping
@@ -109,15 +100,17 @@ public class MVCController {
 	 * ResponseEntity<>("Delete forever", HttpStatus.MOVED_PERMANENTLY); }
 	 */
 
-	/*@DeleteMapping(value = "/eliminarproyecto/{id}")
-	public ResponseEntity<String> deleteProyecto(@PathVariable("id") int id) {
-		return new ResponseEntity<String>(HttpStatus.OK);
-	}*/
-	
-	@DeleteMapping("/eliminarproyecto/{idproyecto}")
+	/*
+	 * @DeleteMapping(value = "/eliminarproyecto/{id}") public
+	 * ResponseEntity<String> deleteProyecto(@PathVariable("id") int id) { return
+	 * new ResponseEntity<String>(HttpStatus.OK); }
+	 */
+
+	@GetMapping("/eliminarproyecto/{idproyecto}")
 	public String deleteById(@PathVariable Integer idproyecto) {
 		proyectoService.deleteById(idproyecto);
-		return "redirect:/";
+		return "redirect:/adminproyectos";
+
 	}
 
 	/*
@@ -136,27 +129,26 @@ public class MVCController {
 	public String getAdmin() {
 		return "admin";
 	}
-	
+
 	@GetMapping("/adminequipo")
 	public String getAdminEquipo() {
 		return "adminequipo";
 	}
-	
+
 	@Autowired
 	private ProyectoService proyectoAdmin;
-	
+
 	@GetMapping("/adminproyectos")
 	public String getAdminProyectos(Model model) {
 		model.addAttribute("listaProyectos", proyectoAdmin.findAll());
 		return "adminproyectos";
 	}
-	
-	
+
 	@GetMapping("/proyectoAddNuevo")
 	public String getAdminProyectoAddNuevo() {
 		return "proyectoAddNuevo";
 	}
-	
+
 	@GetMapping("/equipoAddNuevo")
 	public String getAdminEquipoAddNuevo() {
 		return "equipoAddNuevo";

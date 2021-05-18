@@ -34,14 +34,27 @@
             <td th:text="${proyecto.descripcion}" />
             <td th:text="${proyecto.imagen}" />
             <td th:text="${proyecto.cliente}" />
-            <td> <a th:href="@{/eliminarproyecto(idproyecto=${proyecto.idproyecto})}">Eliminar</a>
-                <a th:href="@{/editarproyecto(idproyecto=${proyecto.idproyecto})}">Modificar</a>
+            <td>
+                <a th:href="@{/eliminarproyecto/{idproyecto}(idproyecto=${proyecto.idproyecto})}">Eliminar</a>
             </td>
 
 
         </tr>
 
     </table>
+
+    <!-- 
+        RequestParam
+
+        <a th:href="@{/eliminarproyecto(idproyecto=${proyecto.idproyecto})}">Eliminar</a>
+        <a th:href="@{/editarproyecto(idproyecto=${proyecto.idproyecto})}">Modificar</a>
+
+        PathVariable
+        
+        <a th:href="@{/category/edit/{id}(id=${category.idCategory})}">view</a>
+                
+
+    -->
 
     <a href="proyectoAddNuevo">Añadir nuevo registro</a>
 
