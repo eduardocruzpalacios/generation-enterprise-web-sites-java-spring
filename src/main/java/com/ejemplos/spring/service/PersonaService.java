@@ -18,12 +18,15 @@ import com.ejemplos.spring.model.Persona;
 
 public interface PersonaService {
 
-	//Método para listar
+	// Método para listar
 	public List<Persona> findAll();
-	
-	//Método para guardar
+
+	// Método para guardar
 	public Persona save(Persona persona);
-	
+
 	// Método para borrar
-		public void deleteById(int idpersona);
+	public void deleteById(int idpersona);
+
+	// Método para modificar
+	public void findById(int idpersona);
 }
