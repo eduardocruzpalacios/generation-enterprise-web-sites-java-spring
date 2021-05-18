@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body{
+    background-color: #eeeeee;
+}
+
 .menu-nav{
     display: flex;
     flex-direction: row;
@@ -28,6 +32,38 @@
 .menu-nav a:hover{
     color: rgb(32, 148, 163);
 }
+
+h1{
+    font-family: 'Oswald', sans-serif;
+    color:#05476d;
+    font-size: 3rem;
+}
+
+h2{
+    font-family: 'Oswald', sans-serif;
+    color:#05476d;
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3{
+    font-family: 'Oswald', sans-serif;
+    color:#05476d;
+    font-size: 1.6rem;
+}
+
+h4{
+    font-family: 'Oswald', sans-serif;
+    color:#05476d;
+    font-size: 1.2rem;
+}
+
+p, a, li{
+    font-family: 'Roboto', sans-serif;
+    color:rgb(32, 32, 32);
+    font-size: 1rem;
+}
+
 /*
 
 VARIABLES PARA COLORES/TAMAÑOS
