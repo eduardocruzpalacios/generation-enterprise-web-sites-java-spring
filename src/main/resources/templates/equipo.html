@@ -20,23 +20,23 @@
 
 <body>
 
-                             <!--HEADER-->
+    <!--HEADER-->
 
-   <header>
-    <div class="nombre-empresa">
-        <h1>NEXTO MARKET</h1>
-    </div>
-    <nav class="menu-nav">
-        <a href="home.html" class="actual">Home</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="equipo.html">Equipo</a>
-        <a href="contacto.html">Contacto</a>
-    </nav>
-</header>
+    <header>
+        <div class="nombre-empresa">
+            <h1>NEXTO MARKET</h1>
+        </div>
+        <nav class="menu-nav">
+            <a href="home.html" class="actual">Home</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="equipo.html">Equipo</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
 
-                            <!--EQUIPO-->
+    <!--EQUIPO-->
 
-    <section id="equipo" >
+    <section id="equipo">
         <h2>EQUIPO</h2>
         <div class="contenedor-tabla">
             <table>
@@ -46,7 +46,6 @@
                     <th>Resumen</th>
                     <th>Foto</th>
                     <th>Cargo</th>
-                    <th>Acciones</th>
                 </tr>
                 <tr th:each="persona: ${listarPersonas}">
                     <td th:text="${persona.nombre}" />
@@ -54,27 +53,16 @@
                     <td th:text="${persona.resumen}" />
                     <td th:text="${persona.foto}" />
                     <td th:text="${persona.cargo}" />
-                    <td><a class="boton" href="equipoModificar.html">Modificar </a>
-                        <a class="boton" href="#">Eliminar </a>
-                    </td>
                 </tr>
             </table>
         </div>
 
-        <!--<div>
-            <p text="${equipo.nombre}" />
-            <p text="${equipo.fechafin}" />
-            <p text="${equipo.apellidos}" />
-            <p text="${equipo.resumen}" />
+        <!--
             <img th:src="${equipo.foto}"/ th:alt="${equipo.nombre}"/>
-            <p text="${cargos.cargo}" />
-        </div>-->
-
-        <a class="boton" href="equipoAddNuevo.html">Añadir nueva persona</a>
+            -->
 
 
     </section>
-
 </body>
 
 </html>
