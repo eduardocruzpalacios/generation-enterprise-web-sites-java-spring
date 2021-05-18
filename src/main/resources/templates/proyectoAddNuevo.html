@@ -22,38 +22,38 @@
 
             <p>
                 <label for="proyecto">Proyecto:</label>
-                <input type="text" name="proyecto" th:field="*{proyectos.proyecto}" required />
+                <input type="text" name="proyecto" th:field="*{proyecto}" required />
             </p>
 
             <p>
                 <label for="fechafin">Fecha Finalización:</label>
-                <input type="date" name="fechafin" th:field="*{proyectos.fechafin}" required />
+                <input type="date" name="fechafin" th:field="*{fechafin}" required />
             </p>
 
             <p>
                 <label for="resumen">Resumen</label>
-                <input type="text" name="resumen" th:field="*{proyectos.resumen}" required />
+                <input type="text" name="resumen" th:field="*{resumen}" required />
             </p>
 
             <p>
                 <label for="descripcion">Descripción:</label>
-                <input type="text" name="descripcion" th:field="*{proyectos.descripcion}" required />
+                <input type="text" name="descripcion" th:field="*{descripcion}" required />
             </p>
 
             <p>
                 <label for="proyectoimagen">Elija imagen:</label>
                 
-                <select name="proyectoimagen" th:field="*{proyectos.imagen}">
+                <select name="proyectoimagen" th:field="*{imagen}">
                     <option value="http://.....movieflix">MovielFlix</option>
                     <option value="...">Landing Page Nexto Market</option>
                     <option value="http://.....trivialpreguntas">Trivial de Preguntas</option>
                 </select>
             </p>
-
+            <!-- 
             <p>
                 <label for="cliente">Cliente:</label>
-                <input type="text" name="cliente" th:field="*{proyectos.empresa}" required />
-            </p>
+                <input type="text" name="cliente" th:field="*{cliente}" required />
+            </p>-->
 
             <p><input type="submit" value="Guardar" /></p>
 

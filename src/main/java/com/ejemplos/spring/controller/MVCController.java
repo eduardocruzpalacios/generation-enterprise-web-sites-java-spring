@@ -92,7 +92,7 @@ public class MVCController {
 	}
 
 	// Guardar proyecto
-	@GetMapping("/addproyecto")
+	@PostMapping("/addproyecto")
 	public String saveProyecto(Proyecto proyecto) {
 		log.info("----" + proyectoService.save(proyecto));
 		proyectoService.save(proyecto);
@@ -131,7 +131,8 @@ public class MVCController {
 	}
 
 	@GetMapping("/proyectoAddNuevo")
-	public String getAdminProyectoAddNuevo() {
+	public String getAdminProyectoAddNuevo(Model model) {
+		model.addAttribute("proyecto", new Proyecto());
 		return "proyectoAddNuevo";
 	}
 

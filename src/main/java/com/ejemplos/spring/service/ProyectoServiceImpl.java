@@ -37,7 +37,7 @@ public class ProyectoServiceImpl implements ProyectoService {
 	public Proyecto save(Proyecto proyecto) {
 
 		RestTemplate restTemplateSave = new RestTemplate();
-		Proyecto p = restTemplateSave.postForObject("http://localhost:5000/addproyectos", proyecto, Proyecto.class);
+		Proyecto p = restTemplateSave.postForObject("http://localhost:5000/addproyecto", proyecto, Proyecto.class);
 		return p;
 	}
 
