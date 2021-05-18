@@ -83,9 +83,11 @@ public class MVCController {
 	}
 
 	// Guardar proyecto
-	@PostMapping
-	public Proyecto saveProyecto(@RequestBody Proyecto proyecto) {
-		return proyectoService.save(proyecto);
+	@GetMapping("/addproyecto")
+	public String saveProyecto(Proyecto proyecto) {
+		log.info("----" + proyectoService.save(proyecto));
+		proyectoService.save(proyecto);
+		return "redirect:/adminproyectos";
 	}
 
 	// Eliminar proyecto
