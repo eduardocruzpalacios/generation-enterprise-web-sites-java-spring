@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.ejemplos.spring.model.Persona;
+import com.ejemplos.spring.model.Proyecto;
 
 @Service
 public class PersonaServiceImpl implements PersonaService {
@@ -31,6 +32,14 @@ public class PersonaServiceImpl implements PersonaService {
 		List<Persona> listaPersonas = Arrays.asList(personas);
 		return listaPersonas;
 
+	}
+
+	// Método para guardar
+	public Persona save(Persona persona) {
+
+		RestTemplate restTemplateSave = new RestTemplate();
+		Persona person = restTemplateSave.postForObject("http://localhost:5000/addpersona", persona, Persona.class);
+		return person;
 	}
 
 	// Método eliminar
