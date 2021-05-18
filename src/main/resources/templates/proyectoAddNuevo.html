@@ -7,45 +7,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Añadir nuevo proyecto</title>
     <!-- estilos -->
-
-
-
 </head>
 
 <body>
 
-
     <section>
-        <p>Rellena los siguientes campos para guardar un nuevo proyecto :</p>
-
-
+        <p>Rellena los siguientes campos para guardar un nuevo proyecto:</p>
     </section>
 
     <section class="formulario">
-       <!-- <form th:action="@{/addproyecto}" method="post" th:object="${proyecto}">
-            <p>Proyecto: <input type="text" name="proyecto" th:field="*{proyecto}" required></p>
-            <p>Fecha Finalización: <input type="date" name="fechafin" th:field="*{fechafin}" required></p>
-            <p>Resumen: <input type="text" name="resumen" th:field="*{resumen}" required></p>
-            <p>Descripción: <input type="text" name="descripcion" th:field="*{descripcion}" required></p>
-            <p><label for="proyectoimagen">Elija imagen:</label>
-                <select name="proyectoimagen" th:field="*{imagen}">
+
+        
+        <form th:action="@{/addproyecto}" method="post" th:object="${proyecto}">
+
+            <p>
+                <label for="proyecto">Proyecto:</label>
+                <input type="text" name="proyecto" th:field="*{proyectos.proyecto}" required />
+            </p>
+
+            <p>
+                <label for="fechafin">Fecha Finalización:</label>
+                <input type="date" name="fechafin" th:field="*{proyectos.fechafin}" required />
+            </p>
+
+            <p>
+                <label for="resumen">Resumen</label>
+                <input type="text" name="resumen" th:field="*{proyectos.resumen}" required />
+            </p>
+
+            <p>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" name="descripcion" th:field="*{proyectos.descripcion}" required />
+            </p>
+
+            <p>
+                <label for="proyectoimagen">Elija imagen:</label>
+                
+                <select name="proyectoimagen" th:field="*{proyectos.imagen}">
                     <option value="http://.....movieflix">MovielFlix</option>
                     <option value="...">Landing Page Nexto Market</option>
                     <option value="http://.....trivialpreguntas">Trivial de Preguntas</option>
-                </select></p>
-            <p>Cliente: <input type="text" name="cliente" th:field="*{empresa}" required></p>
+                </select>
+            </p>
 
-            <p><input type="submit" value="Guardar"></p>
+            <p>
+                <label for="cliente">Cliente:</label>
+                <input type="text" name="cliente" th:field="*{proyectos.empresa}" required />
+            </p>
+
+            <p><input type="submit" value="Guardar" /></p>
+
         </form>
-        -->
-
-
-
-
-
-
+        
     </section>
 
 </body>
-
 </html>
