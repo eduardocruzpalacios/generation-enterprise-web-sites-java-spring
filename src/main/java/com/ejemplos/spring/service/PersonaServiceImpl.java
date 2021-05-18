@@ -32,9 +32,12 @@ public class PersonaServiceImpl implements PersonaService {
 		return listaPersonas;
 
 	}
-	
-	
-		
-		
-	
+
+	// Método eliminar
+	@Override
+	public void deleteById(int idpersona) {
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.delete("http://localhost:5000/eliminarpersona/" + idpersona);
+	}
+
 }
