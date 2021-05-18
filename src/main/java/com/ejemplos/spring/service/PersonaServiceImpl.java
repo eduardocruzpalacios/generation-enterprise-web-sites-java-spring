@@ -19,7 +19,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.ejemplos.spring.model.Persona;
-import com.ejemplos.spring.model.Proyecto;
 
 @Service
 public class PersonaServiceImpl implements PersonaService {
@@ -47,6 +46,12 @@ public class PersonaServiceImpl implements PersonaService {
 	public void deleteById(int idpersona) {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.delete("http://localhost:5000/eliminarpersona/" + idpersona);
+	}
+
+	// Método para modificar
+	public void findById(int idpersona) {
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.put("http://localhost:5000/editarequipo", idpersona);
 	}
 
 }

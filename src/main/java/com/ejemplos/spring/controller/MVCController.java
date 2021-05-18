@@ -19,8 +19,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.ejemplos.spring.model.Persona;
 import com.ejemplos.spring.model.Proyecto;
@@ -80,6 +78,13 @@ public class MVCController {
 
 	}
 
+	// Modificar persona
+	@GetMapping("/editarequipo/{idpersona}")
+	public String findByIdPersona(@PathVariable Integer idpersona) {
+		personaService.findById(idpersona);
+		return "redirect:/adminequipo";
+	}
+
 	@Autowired
 	private ProyectoService proyectoService;
 
@@ -105,6 +110,13 @@ public class MVCController {
 		proyectoService.deleteById(idproyecto);
 		return "redirect:/adminproyectos";
 
+	}
+
+	// Modificar proyecto
+	@GetMapping("/editarproyecto/{idproyecto}")
+	public String findByIdProyecto(@PathVariable Integer idproyecto) {
+		proyectoService.findById(idproyecto);
+		return "redirect:/adminproyectos";
 	}
 
 	@GetMapping("/admin")
