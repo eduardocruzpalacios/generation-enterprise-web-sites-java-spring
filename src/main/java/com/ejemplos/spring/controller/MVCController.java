@@ -80,50 +80,12 @@ public class MVCController {
 		return proyectoService.save(proyecto);
 	}
 
-	/*
-	 * Borrar proyecto
-	 * 
-	 * @GetMapping("/eliminarproyecto/{idproyecto}") public String
-	 * eliminarProyecto(Model model) { log.info("---- borrar");
-	 * model.addAttribute("listaproyectos", proyectoService.deleteById(idproyecto));
-	 * return "proyectos";
-	 * 
-	 * }
-	 */
-
-	/*
-	 * @RequestMapping(value = "/eliminarproyecto/{idproyecto}", method =
-	 * RequestMethod.DELETE) public ResponseEntity<String>
-	 * eliminarProyecto(@PathVariable Integer idproyecto, @RequestBody Proyecto p) {
-	 * log.info("------------------- borrar ");
-	 * proyectoService.deleteById(idproyecto); return new
-	 * ResponseEntity<>("Delete forever", HttpStatus.MOVED_PERMANENTLY); }
-	 */
-
-	/*
-	 * @DeleteMapping(value = "/eliminarproyecto/{id}") public
-	 * ResponseEntity<String> deleteProyecto(@PathVariable("id") int id) { return
-	 * new ResponseEntity<String>(HttpStatus.OK); }
-	 */
-
 	@GetMapping("/eliminarproyecto/{idproyecto}")
 	public String deleteById(@PathVariable Integer idproyecto) {
 		proyectoService.deleteById(idproyecto);
 		return "redirect:/adminproyectos";
 
 	}
-
-	/*
-	 * private static void deleteEmployee() { final String uri =
-	 * "http://localhost:8080/springrestexample/employees/{id}"; RestTemplate
-	 * restTemplate = new RestTemplate();
-	 * 
-	 * Map<String, String> params = new HashMap<String, String>(); params.put("id",
-	 * "2");
-	 * 
-	 * restTemplate.delete ( uri, params );
-	 * 
-	 */
 
 	@GetMapping("/admin")
 	public String getAdmin() {
