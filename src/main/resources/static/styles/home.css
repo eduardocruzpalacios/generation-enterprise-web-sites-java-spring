@@ -1,13 +1,4 @@
-.nombre-empresa{
-    display: flex;
-    width:100%;
 
-    justify-content: center;
-    align-items: center;
- 
-    padding: 10px;
-    margin: auto;
-}
 
 .banner{
     height:38.5rem;
@@ -20,8 +11,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
-
-
 }
 
 .titulo-aboutus{

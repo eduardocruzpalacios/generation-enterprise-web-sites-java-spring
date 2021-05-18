@@ -8,6 +8,17 @@ body{
     background-color: #eeeeee;
 }
 
+.nombre-empresa{
+    display: flex;
+    width:100%;
+
+    justify-content: center;
+    align-items: center;
+ 
+    padding: 10px;
+    margin: auto;
+}
+
 .menu-nav{
     display: flex;
     flex-direction: row;
@@ -58,7 +69,7 @@ h4{
     font-size: 1.2rem;
 }
 
-p, a, li{
+p, a, th{
     font-family: 'Roboto', sans-serif;
     color:rgb(32, 32, 32);
     font-size: 1rem;
