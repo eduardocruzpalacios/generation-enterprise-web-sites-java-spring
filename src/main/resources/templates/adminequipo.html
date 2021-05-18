@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +11,35 @@
     <h2>Gestión de Equipo</h2>
 
     <h3>Listado</h3>
+
+    <table>
+
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Resumen</th>
+            <th>Foto</th>
+            <th>Cargo</th>
+            <th>Acciones</th>
+        </tr>
+
+        <tr th:each="persona: ${listarPersonas}">
+
+            <td th:text="${persona.nombre}" />
+            <td th:text="${persona.apellidos}" />
+            <td th:text="${persona.resumen}" />
+            <td th:text="${persona.foto}" />
+            <td th:text="${persona.cargo}" />
+            <td>
+                <a th:href="@{/eliminarpersona/{idpersona}(idpersona=${persona.idpersona})}">Eliminar</a>
+
+            </td>
+
+        </tr>
+
+
+
+    </table>
 
     <a href="equipoAddNuevo">Añadir nuevo registro</a>
     

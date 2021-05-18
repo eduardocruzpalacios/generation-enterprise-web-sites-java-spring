@@ -19,4 +19,7 @@ import com.ejemplos.spring.model.Persona;
 public interface PersonaService {
 
 	public List<Persona> findAll();
+	
+	// Método para borrar
+		public void deleteById(int idpersona);
 }
