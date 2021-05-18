@@ -1,27 +1,26 @@
-
-
-.banner{
-    height:38.5rem;
+.banner {
+    height: 37.4rem;
     background-image: url(../img/imagen_header.jpg);
     background-size: cover;
+    background-position: center;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
 }
 
-.titulo-aboutus{
+.titulo-aboutus {
     display: flex;
     width: 100%;
-    padding: 3rem;
+    padding: 3rem 3rem 0rem 3rem;
     justify-content: center;
     align-content: center;
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -33,7 +32,7 @@
     align-content: center;
 }
 
-.texto{
+.texto {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -47,51 +46,34 @@
     margin: 3rem 0rem;
 }
 
-.texto#texto1{
-    background-size:cover; 
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../img/about_us.jpg) no-repeat center center fixed;
+.texto#texto1 {
+    background-size: cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/about_us.jpg) no-repeat center center fixed;
 }
 
-.texto#texto2{
-    background-size:cover; 
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../img/about_us_2.jpg) no-repeat center center fixed;
+.texto#texto2 {
+    background-size: cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../img/about_us_2.jpg) no-repeat center center fixed;
 }
 
-
-/*
-.row{
-    padding-top: 1.5rem;
-    margin-bottom: 3rem;
-}*/
-
-.row p{
+.row p {
     color: rgb(32, 32, 32);
 }
 
-.row h2{
+.row h2 {
     font-weight: bold;
     padding: 3rem 0rem 3rem 0rem;
     color: #510172;
 }
 
-.row h3{
+.row h3 {
     font-weight: bold;
 }
 
-.row h4{
+.row h4 {
     font-weight: bold;
     color: #510172;
 }
-/*
-.img1{
-    padding-top: 4rem;
-    margin-top: 6rem;
-
-}
-
-.img2{
-    margin-top: 1.5rem;
-}*/
 
 .footer-rrss {
     display: flex;
@@ -140,10 +122,12 @@
 
 .footer-contacto .contenedor {
     text-align: center;
-    padding:0.4rem;
+    padding: 0.4rem;
 }
 
-.footer-contacto .contenedor h2, p, a{
+.footer-contacto .contenedor h2,
+p,
+a {
     padding: 0.3rem;
 }
 
@@ -180,25 +164,4 @@ p {
 
 .copyright p {
     color: #eeeeee;
-}
-
-
-/* MQ MOBILE */
-@media (max-width: 687px) {
-    
-}
-
-/* MQ TABLET */
-@media (min-width: 688px) and (max-width: 992px) {
-  
-}
-
-/* MQ PC */
-@media (min-width: 993px) {
-
-}
-
-/* MQ XL screens */
-@media (min-width: 1312px) {
-    
 }
