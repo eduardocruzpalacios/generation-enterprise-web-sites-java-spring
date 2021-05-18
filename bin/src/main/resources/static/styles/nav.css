@@ -1,13 +1,3 @@
-.contenedor-tabla{
-    display: flex;
-    flex-wrap: wrap;
-    
-    align-content: center;
-    justify-content: center;
-
-    margin: auto;
-}
-
 /* MQ MOBILE */
 @media (max-width: 687px) {
     

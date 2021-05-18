@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar persona</title>
+    <!-- estilos -->
+    <link rel="stylesheet" href="../static/styles/reset.css">
+    <link rel="stylesheet" href="../static/styles/nav.css">
+    <link rel="stylesheet" href="../static/styles/equipo.css">
+</head>
+
+<body>
+
+
+    <section>
+        <p>Añade o elimina los elementos que van a ser modificados :</p>
+
+
+    </section>
+
+    <section class="formulario">
+        <form action="" method="POST">
+            <p>Nombre: <input type="text" name="nombre" required></p>
+            <p>Apellidos: <input type="text" name="apellidos" required></p>
+            <p>Resumen: <input type="text" name="resumen" required></p>
+            <p>Foto: <input type="file" name="archivo" value="image/*" required></p>
+            <p>Cargo: <input type="text" name="cargo" required></p>
+
+            <p><input type="submit" value="Guardar"></p>
+        </form>
+
+
+    </section>
+
+</body>
+
+</html>

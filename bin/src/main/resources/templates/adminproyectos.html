@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Gestión de Proyectos</h2>
+
+    <h3>Listado</h3>
+
+    <table>
+
+        <tr>
+            <th>Proyecto</th>
+            <th>Fecha fin</th>
+            <th>Resumen</th>
+            <th>Descripciones</th>
+            <th>Imagen</th>
+            <th>Cliente</th>
+            <th>Acciones</th>
+        </tr>
+
+        <tr th:each="proyecto: ${listaProyectos}">
+
+            <td th:text="${proyecto.proyecto}" />
+            <td th:text="${proyecto.fechafin}" />
+            <td th:text="${proyecto.resumen}" />
+            <td th:text="${proyecto.descripcion}" />
+            <td th:text="${proyecto.imagen}" />
+            <td th:text="${proyecto.cliente}" />
+            <td>
+                <a th:href="@{/eliminarproyecto/{idproyecto}(idproyecto=${proyecto.idproyecto})}">Eliminar</a>
+            </td>
+
+
+        </tr>
+
+    </table>
+
+    <!-- 
+        RequestParam
+
+        <a th:href="@{/eliminarproyecto(idproyecto=${proyecto.idproyecto})}">Eliminar</a>
+        <a th:href="@{/editarproyecto(idproyecto=${proyecto.idproyecto})}">Modificar</a>
+
+        PathVariable
+        
+        <a th:href="@{/category/edit/{id}(id=${category.idCategory})}">view</a>
+                
+
+    -->
+
+    <a href="proyectoAddNuevo">Añadir nuevo registro</a>
+
+</body>
+
+</html>
