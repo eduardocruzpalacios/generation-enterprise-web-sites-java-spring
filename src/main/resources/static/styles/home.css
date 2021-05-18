@@ -7,26 +7,192 @@
  
     padding: 10px;
     margin: auto;
-
-    background-color: #eeeeee;
-
-}
-
-h1{
-    font-family: 'Oswald', sans-serif;
-    color:#05476d;
-    font-size: 3rem;
-}
-
-.menu-nav{
-    background-color: #eeeeee;
 }
 
 .banner{
-    height:40rem;
+    height:38.5rem;
     background-image: url(../img/imagen_header.jpg);
     background-size: cover;
 }
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+
+
+}
+
+.titulo-aboutus{
+    display: flex;
+    width: 100%;
+    padding: 3rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+    margin: auto;
+
+    justify-content: center;
+    align-content: center;
+}
+
+.texto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-content: center;
+    justify-content: center;
+
+    width: 55rem;
+    padding: 2rem;
+
+    margin: 3rem 0rem;
+}
+
+.texto#texto1{
+    background-size:cover; 
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../img/about_us.jpg) no-repeat center center fixed;
+}
+
+.texto#texto2{
+    background-size:cover; 
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../img/about_us_2.jpg) no-repeat center center fixed;
+}
+
+
+/*
+.row{
+    padding-top: 1.5rem;
+    margin-bottom: 3rem;
+}*/
+
+.row p{
+    color: rgb(32, 32, 32);
+}
+
+.row h2{
+    font-weight: bold;
+    padding: 3rem 0rem 3rem 0rem;
+    color: #510172;
+}
+
+.row h3{
+    font-weight: bold;
+}
+
+.row h4{
+    font-weight: bold;
+    color: #510172;
+}
+/*
+.img1{
+    padding-top: 4rem;
+    margin-top: 6rem;
+
+}
+
+.img2{
+    margin-top: 1.5rem;
+}*/
+
+.footer-rrss {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+
+    background-color: #12b5cb;
+
+    padding: 1rem;
+    margin: auto;
+}
+
+.footer-rrss h2 {
+    color: #eeeeee;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.footer-rrss a {
+    color: #1b2549;
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+
+.footer-rrss a:hover {
+    color: #eeeeee;
+    transition: 0.4s;
+}
+
+.footer-contacto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    background-color: #001530;
+    justify-content: space-around;
+
+    padding: 0.5rem;
+    margin: auto;
+}
+
+.footer-contacto .contenedor {
+    text-align: center;
+    padding:0.4rem;
+}
+
+.footer-contacto .contenedor h2, p, a{
+    padding: 0.3rem;
+}
+
+.footer-contacto .contenedor h2,
+p {
+    color: #eeeeee;
+}
+
+.footer-contacto .contenedor a {
+    color: #12b5cb;
+    font-size: 1.2rem;
+}
+
+.footer-contacto .contenedor a:hover {
+    color: #eeeeee;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #001530;
+
+    border-top: #eeeeee solid 1px;
+    margin: auto;
+
+    width: 100%;
+
+    justify-content: center;
+    align-content: center;
+
+    padding: 0.2rem;
+}
+
+.copyright p {
+    color: #eeeeee;
+}
+
 
 /* MQ MOBILE */
 @media (max-width: 687px) {
@@ -40,7 +206,7 @@ h1{
 
 /* MQ PC */
 @media (min-width: 993px) {
-  
+
 }
 
 /* MQ XL screens */
