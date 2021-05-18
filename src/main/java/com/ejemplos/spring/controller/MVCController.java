@@ -63,6 +63,14 @@ public class MVCController {
 		return "equipo";
 	}
 
+	// Eliminar personas
+	@GetMapping("/eliminarpersona/{idpersona}")
+	public String deleteByIdPersona(@PathVariable Integer idpersona) {
+		personaService.deleteById(idpersona);
+		return "redirect:/adminequipo";
+
+	}
+
 	@Autowired
 	private ProyectoService proyectoService;
 
@@ -80,8 +88,9 @@ public class MVCController {
 		return proyectoService.save(proyecto);
 	}
 
+	// Eliminar proyecto
 	@GetMapping("/eliminarproyecto/{idproyecto}")
-	public String deleteById(@PathVariable Integer idproyecto) {
+	public String deleteByIdProyecto(@PathVariable Integer idproyecto) {
 		proyectoService.deleteById(idproyecto);
 		return "redirect:/adminproyectos";
 
@@ -92,8 +101,11 @@ public class MVCController {
 		return "admin";
 	}
 
+	@Autowired
+	private PersonaService personaAdmin;
 	@GetMapping("/adminequipo")
-	public String getAdminEquipo() {
+	public String getAdminEquipo(Model model) {
+		model.addAttribute("listarPersonas", personaAdmin.findAll());
 		return "adminequipo";
 	}
 
