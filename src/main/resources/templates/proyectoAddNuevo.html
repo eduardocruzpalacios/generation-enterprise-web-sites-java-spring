@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Añadir nuevo proyecto</title>
     <!-- estilos -->
-    <link rel="stylesheet" href="../static/styles/reset.css">
-    <link rel="stylesheet" href="../static/styles/nav.css">
-    <link rel="stylesheet" href="../static/styles/equipo.css">
+
+
+
 </head>
 
 <body>
@@ -22,47 +22,25 @@
     </section>
 
     <section class="formulario">
-        <form th:action="@{/addproyecto}"
-                method="post" th:object = >
-            <p>Proyecto: <input type="text" name="proyecto" required></p>
-            <p>Fecha Finalización: <input type="date" name="fechafin" required></p>
-            <p>Resumen: <input type="text" name="resumen" required></p>
-            <p>Descripción: <input type="text" name="descripcion" required></p>
+       <!-- <form th:action="@{/addproyecto}" method="post" th:object="${proyecto}">
+            <p>Proyecto: <input type="text" name="proyecto" th:field="*{proyecto}" required></p>
+            <p>Fecha Finalización: <input type="date" name="fechafin" th:field="*{fechafin}" required></p>
+            <p>Resumen: <input type="text" name="resumen" th:field="*{resumen}" required></p>
+            <p>Descripción: <input type="text" name="descripcion" th:field="*{descripcion}" required></p>
             <p><label for="proyectoimagen">Elija imagen:</label>
-                <select name="proyectoimagen">
+                <select name="proyectoimagen" th:field="*{imagen}">
                     <option value="http://.....movieflix">MovielFlix</option>
                     <option value="...">Landing Page Nexto Market</option>
                     <option value="http://.....trivialpreguntas">Trivial de Preguntas</option>
-
                 </select></p>
-            <p>Cliente: <input type="text" name="cliente" required></p>
+            <p>Cliente: <input type="text" name="cliente" th:field="*{empresa}" required></p>
 
             <p><input type="submit" value="Guardar"></p>
         </form>
+        -->
 
-        <form 
-				method="post"
-				th:object="${cliente}"
-				th:action="@{/addCliente}">
-			<table>
-				<tr>
-					<td><label for="nombre">Nombre</label></td>
-					<td><input type="text" th:field="*{nombre}" /></td>
-				</tr>
-				<tr>
-					<td><label for="id">Nombre Usuario</label></td>
-					<td><input type="text" th:field="*{id}" /></td>
-				</tr>
-				<tr>
-					<td><label for="password">Contraseña</label></td>
-					<td><input type="password" th:field="*{password}" /></td>
-				</tr>
-			</table>
-			<br />
-			<p>
-				<input type="submit" value="Dar de alta" />
-			</p>
-		</form>
+
+
 
 
 
