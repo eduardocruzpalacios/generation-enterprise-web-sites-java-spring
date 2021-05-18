@@ -17,19 +17,26 @@
 
     <section>
         <p>Rellena los siguientes campos para guardar un nuevo miembro del equipo:</p>
-        
+
 
     </section>
 
     <section class="formulario">
         <form action="" method="POST">
-        <p>Nombre: <input type="text" name="nombre" required></p>
-        <p>Apellidos: <input type="text" name="apellidos" required></p>
-        <p>Resumen: <input type="text" name="resumen" required></p>
-        <p>Foto: <input type="file" name="archivo" value="image/*" required></p>
-        <p>Cargo: <input type="text" name="cargo" required></p>
-        
-        <p><input type="submit" value="Guardar"></p>
+            <p>Nombre: <input type="text" name="nombre" required></p>
+            <p>Apellidos: <input type="text" name="apellidos" required></p>
+            <p>Resumen: <input type="text" name="resumen" required></p>
+            <p><label for="equipoimagen">Elija imagen:</label>
+                <select name="equipoimagen">
+                    <option value="http://.....Edu">Eduardo de la Cruz</option>
+                    <option value="http://.....Raul">Raúl Fernández</option>
+                    <option value="http://.....Maria">María Infantes</option>
+                    <option value="http://.....Andrei">Andrei Gherman</option>
+                    <option value="http://.....Miguel">Miguel Ángel Domínguez</option>
+                </select></p>
+            <p>Cargo: <input type="text" name="cargo" required></p>
+
+            <p><input type="submit" value="Guardar"></p>
 
         </form>
 
