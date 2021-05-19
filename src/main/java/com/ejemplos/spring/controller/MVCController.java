@@ -100,7 +100,7 @@ public class MVCController {
 	// Guardar proyecto
 	@PostMapping("/addproyecto")
 	public String saveProyecto(Proyecto proyecto) {
-		log.info("----" + proyectoService.saveAdd(proyecto));
+		log.info("proyectoService.saveAdd(proyecto)");
 		proyectoService.saveAdd(proyecto);
 		return "redirect:/adminproyectos";
 	}
