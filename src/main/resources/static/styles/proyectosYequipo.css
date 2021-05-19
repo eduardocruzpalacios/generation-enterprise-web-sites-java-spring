@@ -7,17 +7,16 @@
 
     margin: auto;
 }*/
-#proyectos {
+.contenido {
     background-color: #05476d;
 }
-
 
 h2 {
     color: #eeeeee;
     padding: 2rem 0rem;
 }
 
-.contenedor-proyecto {
+.contenedor {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -34,7 +33,7 @@ h2 {
     margin: auto;
 }
 
-.imagen-proyecto {
+.contenedor-imagen {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -43,8 +42,10 @@ h2 {
     margin: auto;
 }
 
-.descripcion-proyecto {
+.contenedor-descripcion {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     width: 50%;
@@ -53,12 +54,18 @@ h2 {
 
 }
 
-.descripcion-proyecto p {
+.contenedor-descripcion p {
     text-align: center;
     color: #eeeeee;
 }
 
+.contenedor-descripcion .destacado {
+    color: #69056d;
+}
 
+#titulo-proyecto {
+    color: #002a42;
+}
 
 /* MQ MOBILE */
 @media (max-width: 687px) {}
