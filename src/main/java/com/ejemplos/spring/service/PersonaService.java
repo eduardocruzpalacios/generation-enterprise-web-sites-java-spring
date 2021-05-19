@@ -28,5 +28,5 @@ public interface PersonaService {
 	public void deleteById(int idpersona);
 
 	// Método para modificar
-	public void findById(int idpersona);
+	//public void findById(int idpersona);
 }
