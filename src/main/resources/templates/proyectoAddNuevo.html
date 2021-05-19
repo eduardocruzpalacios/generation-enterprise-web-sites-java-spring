@@ -19,6 +19,14 @@
         <h2>Añadir un nuevo proyecto</h2>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="admin">Inicio</a></li>
+            <li><a href="adminproyectos">Gestión de Proyectos</a></li>
+            <li><a href="adminequipo">Gestión de Equipo</a></li>
+        </ul>
+    </nav>
+
     <section class="formulario">
 
         <form th:action="@{/addproyecto}" method="post" th:object="${proyecto}">
