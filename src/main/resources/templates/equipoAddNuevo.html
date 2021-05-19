@@ -41,7 +41,7 @@
             <p>
                 <label for="equipoimagen">Elija imagen:</label>
 
-                <select name="equipoimagen">
+                <select name="equipoimagen" th:field="*{foto}" required>
                     <option value="http://.....Edu">Eduardo de la Cruz</option>
                     <option value="http://.....Raul">Raúl Fernández</option>
                     <option value="http://.....Maria">María Infantes</option>
@@ -50,8 +50,14 @@
                 </select></p>
 
             <p>
-                Cargo: <input type="text" name="cargo" required>
+                <label for="cargo">Elija cargo:</label>
+                <select name="cargo" th:field="*{cargo}" required>
+                    <option th:value="${cargo.cargo}">CEO</option>
             </p>
+
+           <!-- <p>
+                Cargo: <input type="text" name="cargo" required>
+            </p>-->
 
             <p><input type="submit" value="Guardar"></p>
 
