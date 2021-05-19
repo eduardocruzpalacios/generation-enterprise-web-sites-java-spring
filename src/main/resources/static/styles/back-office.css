@@ -22,13 +22,20 @@ a:hover {
 
 /* tipografía */
 
-header, h1
+header,
+h1
 h2,
-h3, th {
+h3,
+th {
     font-family: 'Ubuntu', sans-serif;
 }
 
-p, td, a, label, input, select {
+p,
+td,
+a,
+label,
+input,
+select {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -49,7 +56,11 @@ h3 {
     text-align: center;
 }
 
-table, p, th, td, a {
+table,
+p,
+th,
+td,
+a {
     font-size: 1rem;
 }
 
@@ -93,23 +104,14 @@ section {
     background-color: #ffffff;
 
     margin: 0 auto;
+    margin-bottom: 1.5rem;
     padding: 1.5rem;
 
     border-radius: 12px;
     box-shadow: 0 0 3px 3px #666666;
 }
 
-
-/* inicio */
-section#inicio {
-    width: 75%;
-}
-
-#inicio h2 {
-    margin: 2rem 0;
-}
-
-/* admin */
+/* adminproyectos y adminequipo */
 
 section.tabla h3 {
     margin-bottom: 1rem;
@@ -141,6 +143,11 @@ th, td {
 th {
     background-color: #111111;
     color: #eeeeee;
+}
+
+table img {
+    width: 100px;
+    height: auto;
 }
 
 /* formulario nuevo proyecto/persona */

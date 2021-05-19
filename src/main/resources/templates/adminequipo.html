@@ -45,7 +45,9 @@
                 <td th:text="${persona.nombre}" />
                 <td th:text="${persona.apellidos}" />
                 <td th:text="${persona.resumen}" />
-                <td th:text="${persona.foto}" />
+                <td>
+                    <img th:src="${persona.foto}" />
+                </td>
                 <td th:text="${persona.cargo}" />
                 <td>
                     <a href="#">Modificar</a>

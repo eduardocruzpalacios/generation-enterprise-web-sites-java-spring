@@ -124,6 +124,16 @@ public class MVCController {
 	public String getAdmin() {
 		return "admin";
 	}
+	
+	@GetMapping("/home")
+	public String getHome() {
+		return "home";
+	}
+	
+	@GetMapping("/trabajaConNosotros")
+	public String getTrabajaConNosotros() {
+		return "trabajaConNosotros";
+	}
 
 	@Autowired
 	private PersonaService personaAdmin;
