@@ -34,7 +34,7 @@ public class PersonaServiceImpl implements PersonaService {
 	}
 
 	// Método para guardar
-	public Persona save(Persona persona) {
+	public Persona saveAdd(Persona persona) {
 
 		RestTemplate restTemplateSave = new RestTemplate();
 		Persona person = restTemplateSave.postForObject("http://localhost:5000/addpersona", persona, Persona.class);
@@ -49,9 +49,9 @@ public class PersonaServiceImpl implements PersonaService {
 	}
 
 	// Método para modificar
-	public void findById(int idpersona) {
+	public void saveUpdate(Persona persona) {
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.put("http://localhost:5000/editarequipo", idpersona);
+		restTemplate.put("http://localhost:5000/editarequipo", persona);
 	}
 
 }

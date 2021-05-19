@@ -22,11 +22,11 @@ public interface PersonaService {
 	public List<Persona> findAll();
 
 	// Método para guardar
-	public Persona save(Persona persona);
+	public Persona saveAdd(Persona persona);
 
 	// Método para borrar
 	public void deleteById(int idpersona);
 
 	// Método para modificar
-	//public void findById(int idpersona);
+	public void saveUpdate(Persona persona);
 }
