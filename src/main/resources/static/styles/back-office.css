@@ -28,7 +28,7 @@ h3, th {
     font-family: 'Ubuntu', sans-serif;
 }
 
-p, td, a {
+p, td, a, label, input, select {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -91,7 +91,7 @@ section.tabla h3 {
     margin-bottom: 1rem;
 }
 
-section.tabla {
+section.tabla, section.formulario {
     width: 90%;
     overflow-x: auto;
 }
@@ -117,4 +117,43 @@ th, td {
 th {
     background-color: #111111;
     color: #eeeeee;
+}
+
+/* formulario nuevo proyecto/persona */
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+form label {
+    display: inline-block;
+    min-width: 150px;
+}
+
+form input, form select {
+    border: 0;
+    padding: 5px;
+    outline: 0;
+
+    background-color: #111111;
+    color: #eeeeee;
+    width: 150px;
+}
+
+form input[type="submit"] {
+    background-color: dodgerblue;
+    align-self: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 3px 3px #666666;
+}
+
+form input[type="submit"]:hover {
+    background-color: fuchsia;
+    transition: background-color .5s linear;
 }

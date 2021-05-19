@@ -8,14 +8,13 @@
     <title>Añadir nuevo proyecto</title>
     <!-- estilos -->
     <link rel="stylesheet" href="../static/styles/back-office.css">
-
 </head>
 
 <body>
 
-    <section>
-        <p>Rellena los siguientes campos para guardar un nuevo proyecto:</p>
-    </section>
+    <header>
+        <h2>Añadir un nuevo proyecto</h2>
+    </header>
 
     <section class="formulario">
 
@@ -28,12 +27,12 @@
             </p>
 
             <p>
-                <label for="fechafin">Fecha Finalización:</label>
+                <label for="fechafin">Fecha Fin:</label>
                 <input type="date" name="fechafin" th:field="*{fechafin}" required />
             </p>
 
             <p>
-                <label for="resumen">Resumen</label>
+                <label for="resumen">Resumen:</label>
                 <input type="text" name="resumen" th:field="*{resumen}" required />
             </p>
 
