@@ -34,11 +34,11 @@ public class ProyectoServiceImpl implements ProyectoService {
 	}
 
 	// Método para guardar
-	public Proyecto save(Proyecto proyecto) {
+	public Proyecto saveAdd(Proyecto proyecto) {
 
 		RestTemplate restTemplateSave = new RestTemplate();
-		Proyecto p = restTemplateSave.postForObject("http://localhost:5000/addproyecto", proyecto, Proyecto.class);
-		return p;
+		Proyecto pSave = restTemplateSave.postForObject("http://localhost:5000/addproyecto", proyecto, Proyecto.class);
+		return pSave;
 	}
 
 	//Método para eliminar
@@ -49,9 +49,12 @@ public class ProyectoServiceImpl implements ProyectoService {
 	}
 	
 	//Método para modificar
-	public void findById(int idproyecto) {
-		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.put("http://localhost:5000/editarproyecto", idproyecto);
+	public Proyecto saveUpdate(Proyecto proyecto) {
+		RestTemplate restTemplateUpdate = new RestTemplate();
+		Proyecto pUpdate = restTemplateUpdate.p("http://localhost:5000/editarproyecto/", proyecto, Proyecto.class);
+		return pUpdate;
 	}
+
+	
 
 }

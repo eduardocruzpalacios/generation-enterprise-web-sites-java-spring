@@ -80,7 +80,7 @@ public class MVCController {
 	}
 
 	// Modificar persona
-	@GetMapping("/editarequipo/{idpersona}")
+	@GetMapping("/editarequipo")
 	public String findByIdPersona(@PathVariable Integer idpersona) {
 		personaService.findById(idpersona);
 		return "redirect:/adminequipo";
@@ -100,8 +100,8 @@ public class MVCController {
 	// Guardar proyecto
 	@PostMapping("/addproyecto")
 	public String saveProyecto(Proyecto proyecto) {
-		log.info("----" + proyectoService.save(proyecto));
-		proyectoService.save(proyecto);
+		log.info("----" + proyectoService.saveAdd(proyecto));
+		proyectoService.saveAdd(proyecto);
 		return "redirect:/adminproyectos";
 	}
 
@@ -114,9 +114,9 @@ public class MVCController {
 	}
 
 	// Modificar proyecto
-	@GetMapping("/editarproyecto/{idproyecto}")
-	public String findByIdProyecto(@PathVariable Integer idproyecto) {
-		proyectoService.findById(idproyecto);
+	@GetMapping("/editarproyecto")
+	public String updateProyecto(Proyecto proyecto) {
+		proyectoService.saveUpdate(proyecto);
 		return "redirect:/adminproyectos";
 	}
 

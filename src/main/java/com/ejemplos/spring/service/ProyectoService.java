@@ -22,12 +22,14 @@ public interface ProyectoService {
 	public List<Proyecto> findAll();
 
 	// Método para guardar
-	public Proyecto save(Proyecto proyecto);
+	public Proyecto saveAdd(Proyecto proyecto);
 	
 	// Método para borrar
 	public void deleteById(int idproyecto);
 	
-	//Método para modificar
-	public void findById(int idproyecto);
+	// Método para modificar
+	public Proyecto saveUpdate(Proyecto proyecto);
+	
+	
 
 }
