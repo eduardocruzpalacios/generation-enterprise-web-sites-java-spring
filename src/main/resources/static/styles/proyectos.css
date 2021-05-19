@@ -1,4 +1,4 @@
-.contenedor-tabla{
+/*.contenedor-tabla{
     display: flex;
     flex-wrap: wrap;
     
@@ -6,24 +6,68 @@
     justify-content: center;
 
     margin: auto;
+}*/
+#proyectos {
+    background-color: #05476d;
 }
+
+
+h2 {
+    color: #eeeeee;
+    padding: 2rem 0rem;
+}
+
+.contenedor-proyecto {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-content: center;
+    justify-content: center;
+
+    width: 40%;
+
+    background-color: rgba(238, 238, 238, 0.3);
+    border-bottom: #05476d solid 1rem;
+
+    border-radius: 20px 20px 0px 0px;
+    margin: auto;
+}
+
+.imagen-proyecto {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    padding: 3rem 0rem 0rem 0rem;
+    margin: auto;
+}
+
+.descripcion-proyecto {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    padding: 2rem 0rem;
+
+}
+
+.descripcion-proyecto p {
+    text-align: center;
+    color: #eeeeee;
+}
+
+
 
 /* MQ MOBILE */
-@media (max-width: 687px) {
-    
-}
+@media (max-width: 687px) {}
 
 /* MQ TABLET */
-@media (min-width: 688px) and (max-width: 992px) {
-  
-}
+@media (min-width: 688px) and (max-width: 992px) {}
 
 /* MQ PC */
-@media (min-width: 993px) {
-  
-}
+@media (min-width: 993px) {}
 
 /* MQ XL screens */
-@media (min-width: 1312px) {
-    
-}
+@media (min-width: 1312px) {}

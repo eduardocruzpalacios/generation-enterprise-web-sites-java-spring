@@ -16,12 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-  
+
 </head>
 
 <body>
 
-                            <!--HEADER-->
+    <!--HEADER-->
 
     <header>
         <div class="nombre-empresa">
@@ -35,10 +35,79 @@
         </nav>
     </header>
 
-                            <!--EQUIPO-->
+    <!--PROYECTOS-->
 
     <section id="proyectos">
         <h2>PROYECTOS</h2>
+
+        <!--PROYECTO 1-->
+
+        <div class="contenedor-proyecto" th:each="proyecto: ${listaProyectos}">
+            <div class="imagen-proyecto"><img src="../static/img/movieflix.jpg" width="150px" alt="movieflix"></div>
+            <div class="descripcion-proyecto">
+                <p th:text="${proyecto.proyecto}" />
+                <p th:text="${proyecto.cliente}" />
+                <p th:text="${proyecto.resumen}" />
+                <p th:text="${proyecto.descripcion}" />
+            </div>
+        </div>
+
+        <!--
+  
+        <div class="contenedor-proyecto">
+            <div class="imagen-proyecto"><img src="../static/img/huaweiProyectos.png" width="150px" alt="movieflix">
+            </div>
+            <div class="descripcion-proyecto">
+                <p>Página web y sistema de gestión de clientes.</p>
+            </div>
+        </div>
+
+ 
+
+        <div class="contenedor-proyecto">
+            <div class="imagen-proyecto"><img src="../static/img/canonProyectos.png" width="150px" alt="movieflix">
+            </div>
+            <div class="descripcion-proyecto">
+                <p>Página web y sistema de gestión de clientes.</p>
+            </div>
+        </div>
+
+
+
+        <div class="contenedor-proyecto">
+            <div class="imagen-proyecto"><img src="../static/img/landing.png" width="150px" alt="movieflix"></div>
+            <div class="descripcion-proyecto">
+                <p>Landing page para captar clientes potenciales.</p>
+            </div>
+        </div>
+
+
+
+        <div class="contenedor-proyecto">
+            <div class="imagen-proyecto"><img src="../static/img/lgProyectos.png" width="150px" alt="movieflix"></div>
+            <div class="descripcion-proyecto">
+                <p>Página web y sistema de gestión de clientes.</p>
+            </div>
+        </div>
+
+  
+
+        <div class="contenedor-proyecto">
+            <div class="imagen-proyecto"><img src="../static/img/trivia.png" width="150px" alt="movieflix"></div>
+            <div class="descripcion-proyecto">
+                <p>Juego de preguntas y respuestas sobre diversos temas culturales y de ocio.</p>
+            </div>
+        </div>
+
+    -->
+        <footer>
+            <div class="copyright">
+                <p>Copyright &copy; 2021 NextoMarket. All rights reserved.</p>
+            </div>
+        </footer>
+
+    
+        <!--
         <div class="contenedor-tabla">
             <table>
                 <tr>
@@ -63,7 +132,7 @@
         
             </table>
         </div>
-
+        -->
 
     </section>
 
