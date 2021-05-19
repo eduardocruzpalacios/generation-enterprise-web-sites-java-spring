@@ -12,12 +12,9 @@
 
 <body>
 
-
-    <section>
-        <p>Rellena los siguientes campos para guardar un nuevo miembro del equipo:</p>
-
-
-    </section>
+    <header>
+        <h2>Añadir una nueva persona</h2>
+    </header>
 
     <section class="formulario">
 
@@ -47,19 +44,21 @@
                     <option value="http://.....Maria">María Infantes</option>
                     <option value="http://.....Andrei">Andrei Gherman</option>
                     <option value="http://.....Miguel">Miguel Ángel Domínguez</option>
-                </select></p>
+                </select>
+            </p>
 
             <p>
                 <label for="cargo">Elija cargo:</label>
                 <select name="cargo" th:field="*{cargo}" required>
                     <option th:value="${cargo.cargo}">CEO</option>
+                </select>
             </p>
 
            <!-- <p>
                 Cargo: <input type="text" name="cargo" required>
             </p>-->
 
-            <p><input type="submit" value="Guardar"></p>
+            <p><input type="submit" value="Guardar" /></p>
 
         </form>
 
