@@ -66,8 +66,8 @@ public class MVCController {
 	// Guardar persona
 	@GetMapping("/addpersona")
 	public String savePersona(Persona persona) {
-		log.info("----" + personaService.save(persona));
-		personaService.save(persona);
+		log.info("----" + personaService.saveAdd(persona));
+		personaService.saveAdd(persona);
 		return "redirect:/adminequipo";
 	}
 
@@ -81,8 +81,8 @@ public class MVCController {
 
 	// Modificar persona
 	@GetMapping("/editarequipo")
-	public String findByIdPersona(@PathVariable Integer idpersona) {
-		personaService.findById(idpersona);
+	public String updatePersona(Persona persona) {
+		personaService.saveUpdate(persona);
 		return "redirect:/adminequipo";
 	}
 
