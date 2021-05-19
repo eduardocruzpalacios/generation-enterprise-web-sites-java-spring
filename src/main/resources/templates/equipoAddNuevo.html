@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Añadir nuevo integrante</title>
     <!-- estilos -->
-    <link rel="stylesheet" href="../static/styles/reset.css">
-    <link rel="stylesheet" href="../static/styles/nav.css">
-    <link rel="stylesheet" href="../static/styles/equipo.css">
+    <link rel="stylesheet" href="../static/styles/back-office.css">
 </head>
 
 <body>
@@ -22,11 +20,27 @@
     </section>
 
     <section class="formulario">
-        <form action="" method="POST">
-            <p>Nombre: <input type="text" name="nombre" required></p>
-            <p>Apellidos: <input type="text" name="apellidos" required></p>
-            <p>Resumen: <input type="text" name="resumen" required></p>
-            <p><label for="equipoimagen">Elija imagen:</label>
+
+        <form th:action="@{/addpersona}" method="post" th:object="${persona}">
+
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" th:field="*{nombre}" required>
+            </p>
+
+            <p>
+                <label for="apellidos"> Apellidos: </label>
+                <input type="text" name="apellidos" th:field="*{apellidos}" required>
+            </p>
+
+            <p>
+                <label for="resumen"> Resumen: </label>
+                <input type="text" name="resumen" th:field="*{resumen}" required>
+            </p>
+
+            <p>
+                <label for="equipoimagen">Elija imagen:</label>
+
                 <select name="equipoimagen">
                     <option value="http://.....Edu">Eduardo de la Cruz</option>
                     <option value="http://.....Raul">Raúl Fernández</option>
@@ -34,7 +48,10 @@
                     <option value="http://.....Andrei">Andrei Gherman</option>
                     <option value="http://.....Miguel">Miguel Ángel Domínguez</option>
                 </select></p>
-            <p>Cargo: <input type="text" name="cargo" required></p>
+
+            <p>
+                Cargo: <input type="text" name="cargo" required>
+            </p>
 
             <p><input type="submit" value="Guardar"></p>
 
