@@ -21,6 +21,7 @@
 
 .menu-nav a:hover {
     color: rgb(32, 148, 163);
+    transition: 0.3s;
 }
 
 /* MQ MOBILE */

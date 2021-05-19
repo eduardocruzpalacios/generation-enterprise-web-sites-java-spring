@@ -9,7 +9,7 @@
     <!-- estilos -->
     <link rel="stylesheet" th:href="@{/styles/nav.css}">
     <link rel="stylesheet" th:href="@{/styles/reset.css}">
-    <link rel="stylesheet" th:href="@{/styles/equipo.css}">
+    <link rel="stylesheet" th:href="@{/styles/proyectosYequipo.css}">
     <!--fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
@@ -36,33 +36,33 @@
 
     <!--EQUIPO-->
 
-    <section id="equipo">
+    <section class="contenido">
         <h2>EQUIPO</h2>
-        <div class="contenedor-tabla">
-            <table>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Resumen</th>
-                    <th>Foto</th>
-                    <th>Cargo</th>
-                </tr>
-                <tr th:each="persona: ${listarPersonas}">
-                    <td th:text="${persona.nombre}" />
-                    <td th:text="${persona.apellidos}" />
-                    <td th:text="${persona.resumen}" />
-                    <td th:text="${persona.foto}" />
-                    <td th:text="${persona.cargo}" />
-                </tr>
-            </table>
+
+        <div class="contenedor" th:each="persona: ${listarPersonas}">
+            <div class="contenedor-imagen">
+                <img th:src="${persona.foto}" width="150px" th:alt="${persona.nombre}">
+            </div>
+            <div class="contenedor-descripcion">
+                <p th:text="${persona.nombre}" />
+                <p th:text="${persona.apellidos}" />
+                <p class="destacado" th:text="${persona.cargo}" />
+                <p th:text="${persona.resumen}" />
+            </div>
         </div>
+
+        <footer>
+            <div class="copyright">
+                <p>Copyright &copy; 2021 NextoMarket. All rights reserved.</p>
+            </div>
+        </footer>
 
         <!--
             <img th:src="${equipo.foto}"/ th:alt="${equipo.nombre}"/>
             -->
 
-
     </section>
+
 </body>
 
 </html>

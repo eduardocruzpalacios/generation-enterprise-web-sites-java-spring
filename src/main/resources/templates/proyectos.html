@@ -9,7 +9,7 @@
     <!-- estilos -->
     <link rel="stylesheet" th:href="@{/styles/reset.css}">
     <link rel="stylesheet" th:href="@{/styles/nav.css}">
-    <link rel="stylesheet" th:href="@{/styles/proyectos.css}">
+    <link rel="stylesheet" th:href="@{/styles/proyectosYequipo.css}">
     <!--fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
@@ -37,17 +37,18 @@
 
     <!--PROYECTOS-->
 
-    <section id="proyectos">
+    <section class="contenido">
         <h2>PROYECTOS</h2>
 
         <!--PROYECTO 1-->
 
-        <div class="contenedor-proyecto" th:each="proyecto: ${listaProyectos}">
-            <div class="imagen-proyecto"><img src="../static/img/movieflix.jpg" width="150px" alt="movieflix"></div>
-            <div class="descripcion-proyecto">
-                <p th:text="${proyecto.proyecto}" />
-                <p th:text="${proyecto.cliente}" />
-                <p th:text="${proyecto.resumen}" />
+        <div class="contenedor" th:each="proyecto: ${listaProyectos}">
+            <div class="contenedor-imagen">
+                <img th:src="${proyecto.imagen}" width="150px" th:alt="${proyecto.proyecto}">
+            </div>
+            <div class="contenedor-descripcion">
+                <p id="titulo-proyecto" th:text="${proyecto.proyecto}" />
+                <p class="destacado" th:text="${proyecto.cliente}" />
                 <p th:text="${proyecto.descripcion}" />
             </div>
         </div>
