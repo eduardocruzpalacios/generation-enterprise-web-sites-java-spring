@@ -28,7 +28,7 @@ public interface ProyectoService {
 	public void deleteById(int idproyecto);
 	
 	// Método para modificar
-	public Proyecto saveUpdate(Proyecto proyecto);
+	public void saveUpdate(Proyecto proyecto);
 	
 	
 

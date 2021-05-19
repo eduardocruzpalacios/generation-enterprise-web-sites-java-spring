@@ -49,10 +49,9 @@ public class ProyectoServiceImpl implements ProyectoService {
 	}
 	
 	//Método para modificar
-	public Proyecto saveUpdate(Proyecto proyecto) {
+	public void saveUpdate(Proyecto proyecto) {
 		RestTemplate restTemplateUpdate = new RestTemplate();
-		Proyecto pUpdate = restTemplateUpdate.p("http://localhost:5000/editarproyecto/", proyecto, Proyecto.class);
-		return pUpdate;
+		restTemplateUpdate.put("http://localhost:5000/editarproyecto/", proyecto, Proyecto.class);
 	}
 
 	
