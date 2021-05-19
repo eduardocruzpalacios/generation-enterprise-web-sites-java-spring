@@ -52,7 +52,7 @@ public class Cargo {
 
 	@Override
 	public String toString() {
-		return "Cargo [idcargo=" + idcargo + ", cargo=" + cargo + "]";
+		return cargo;
 	}
 
 }
