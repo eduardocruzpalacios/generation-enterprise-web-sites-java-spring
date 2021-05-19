@@ -64,9 +64,9 @@ public class MVCController {
 	}
 
 	// Guardar persona
-	@GetMapping("/addpersona")
+	@PostMapping("/addpersona")
 	public String savePersona(Persona persona) {
-		log.info("----" + personaService.saveAdd(persona));
+		//log.info("----" + personaService.saveAdd(persona));
 		personaService.saveAdd(persona);
 		return "redirect:/adminequipo";
 	}

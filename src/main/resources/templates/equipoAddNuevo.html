@@ -28,48 +28,40 @@
     </nav>
 
     <section class="formulario">
-        <!--
+
         <form th:action="@{/addpersona}" method="post" th:object="${persona}">
 
             <p>
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" th:field="*{nombre}" required>
+                <input type="text" name="nombre" th:field="*{nombre}" required />
             </p>
 
             <p>
-                <label for="apellidos"> Apellidos: </label>
-                <input type="text" name="apellidos" th:field="*{apellidos}" required>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" th:field="*{apellidos}" required />
             </p>
 
             <p>
-                <label for="resumen"> Resumen: </label>
-                <input type="text" name="resumen" th:field="*{resumen}" required>
+                <label for="resumen">Resumen:</label>
+                <input type="text" name="resumen" th:field="*{resumen}" required />
             </p>
 
             <p>
-                <label for="equipoimagen">Elija imagen:</label>
+                <label for="equipofoto">Elija foto:</label>
 
-                <select name="equipoimagen" th:field="*{foto}" required>
-                    <option value="http://.....Edu">Eduardo de la Cruz</option>
-                    <option value="http://.....Raul">Raúl Fernández</option>
-                    <option value="http://.....Maria">María Infantes</option>
-                    <option value="http://.....Andrei">Andrei Gherman</option>
-                    <option value="http://.....Miguel">Miguel Ángel Domínguez</option>
+                <select name="equipofoto" th:field="*{foto}">
+                    <option value="http://.....EDU">Eduardo</option>
+                    <option value="http://.....Raul">Raul</option>
+                    <option value="http://.....Miguel">Miguel</option>
+                    <option value="http://.....Maria">Maria</option>
+                    <option value="http://.....Anfrei">Andrei</option>
+
                 </select>
             </p>
 
-            <p>
-                <label for="cargo">Elija cargo:</label>
-                <select name="cargo" th:field="*{cargo}" required>
-                    <option th:value="${cargo.cargo}">CEO</option>
-                </select>
-            </p>
 
-            <p>
-                Cargo: <input type="text" name="cargo" required>
-            </p>-->
+            <p><input type="submit" value="Guardar" /></p>
 
-        <p><input type="submit" value="Guardar" /></p>
 
         </form>
 
