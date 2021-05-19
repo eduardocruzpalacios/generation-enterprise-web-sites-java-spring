@@ -20,7 +20,7 @@
 
     width: 80%;
 
-    background-color: #eeeeee;
+
     align-content: center;
     justify-content: center;
 
@@ -34,20 +34,23 @@
 
     justify-content: center;
 
-    width: 50%;
+    width: 80%;
+
+    background-color: #eeeeee;
 
     padding: 2rem;
 
-    border: #05476d solid 2rem;
-
-    margin: auto;
+    margin: 0rem 0rem 3rem 0rem;
 }
 
-.oferta h3 {
+.oferta h3,
+h4,
+h5 {
     text-align: center;
-    padding-bottom: 1rem;
+    padding: 1rem;
 }
 
 .oferta p {
     text-align: justify;
+    padding: 0.2rem;
 }
