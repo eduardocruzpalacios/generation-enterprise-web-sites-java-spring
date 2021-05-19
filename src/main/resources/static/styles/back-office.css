@@ -1,0 +1,120 @@
+/* reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+a {
+    color: dodgerblue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: fuchsia;
+}
+
+/* tipografía */
+
+header, h1
+h2,
+h3, th {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p, td, a {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* tamaño fuente y centrado */
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+table, p, th, td, a {
+    font-size: 1rem;
+}
+
+/* header */
+
+header {
+    background-color: #111111;
+    color: #eeeeee;
+
+    padding: 1.5rem 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* section */
+
+section {
+    background-color: #ffffff;
+
+    margin: 0 auto;
+    padding: 1.5rem;
+
+    border-radius: 12px;
+    box-shadow: 0 0 3px 3px #666666;
+}
+
+
+/* inicio */
+section#inicio {
+    width: 75%;
+}
+
+#inicio h2 {
+    margin: 2rem 0;
+}
+
+/* admin */
+
+section.tabla h3 {
+    margin-bottom: 1rem;
+}
+
+section.tabla {
+    width: 90%;
+    overflow-x: auto;
+}
+
+th {
+    border: 1px solid #111111;
+}
+
+td {
+    border: 1px solid #eeeeee;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th {
+    background-color: #111111;
+    color: #eeeeee;
+}
