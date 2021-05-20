@@ -28,14 +28,52 @@
     </nav>
 
     <section class="formulario">
-        <form action="" method="POST">
-            <p>Nombre: <input type="text" name="nombre" required></p>
-            <p>Apellidos: <input type="text" name="apellidos" required></p>
-            <p>Resumen: <input type="text" name="resumen" required></p>
-            <p>Foto: <input type="file" name="archivo" value="image/*" required></p>
-            <p>Cargo: <input type="text" name="cargo" required></p>
+        <form th:action="@{/editarequipo}" method="post" th:object="${persona}">
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" th:field="*{nombre}" required />
+            </p>
 
-            <p><input type="submit" value="Guardar"></p>
+            <p>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" th:field="*{apellidos}" required />
+            </p>
+
+            <p>
+                <label for="resumen">Resumen:</label>
+                <input type="text" name="resumen" th:field="*{resumen}" required />
+            </p>
+
+            <p>
+                <label for="equipofoto">Elija foto:</label>
+
+                <select name="equipofoto" th:field="*{foto}">
+                    <option value="http://.....EDU">Eduardo</option>
+                    <option value="http://.....Raul">Raul</option>
+                    <option value="http://.....Miguel">Miguel</option>
+                    <option value="http://.....Maria">Maria</option>
+                    <option value="http://.....Anfrei">Andrei</option>
+
+                </select>
+            </p>
+
+            <p>
+                <label for="cargo">Cargo:</label>
+                <select name="cargo" th:field="*{cargo.idcargo}">
+                    <option value="1">CEO</option>
+                    <option value="2">Gestor de Proyectos</option>
+                    <option value="3">Front-End Dev</option>
+                    <option value="4">Back-End Dev</option>
+                    <option value="5">Sistemas Dev</option>
+                    <option value="6">BBDD Dev</option>
+                    <option value="7">Junior Dev</option>
+                    <option value="8">Contable</option>
+                    <option value="9">Administrativo</option>
+                </select>
+            </p>
+
+
+            <p><input type="submit" value="Editar" /></p>
         </form>
 
 

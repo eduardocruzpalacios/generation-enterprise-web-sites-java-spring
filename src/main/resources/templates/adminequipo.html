@@ -50,7 +50,7 @@
                 </td>
                 <td th:text="${persona.cargo}" />
                 <td>
-                    <a href="#">Modificar</a>
+                    <a th:href="@{/editarequipo}">Editar</a>
                     <a th:href="@{/eliminarpersona/{idpersona}(idpersona=${persona.idpersona})}">Eliminar</a>
                 </td>
 
@@ -59,6 +59,7 @@
         </table>
 
         <a href="equipoAddNuevo">Añadir nuevo registro</a>
+        
 
     </section>
     

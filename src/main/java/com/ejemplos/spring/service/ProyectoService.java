@@ -27,6 +27,9 @@ public interface ProyectoService {
 	// Método para borrar
 	public void deleteById(int idproyecto);
 
-	// Método para modificar
-	public void saveUpdate(Proyecto proyecto);
+	// Método para localizar
+	public Proyecto findById(int idproyecto);
+	
+	//Método para modificar
+	public void updateProyecto(Proyecto proyecto);
 }

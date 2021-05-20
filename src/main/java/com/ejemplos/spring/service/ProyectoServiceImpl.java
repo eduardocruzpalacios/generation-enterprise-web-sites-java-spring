@@ -47,11 +47,18 @@ public class ProyectoServiceImpl implements ProyectoService {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.delete("http://localhost:5000/eliminarproyecto/" + idproyecto);
 	}
+	
+	//Método para localizar
+	public Proyecto findById(int idproyecto) {
+		RestTemplate restTemplate = new RestTemplate();
+		 Proyecto[] p = restTemplate.getForObject("http://localhost:5000/localizarproyecto/" + idproyecto, Proyecto[].class);
+		 return p[0];
+	}
 
 	// Método para modificar
-	public void saveUpdate(Proyecto proyecto) {
+	public void updateProyecto(Proyecto proyecto) {
 		RestTemplate restTemplateUpdate = new RestTemplate();
-		restTemplateUpdate.put("http://localhost:5000/editarproyecto/", proyecto, Proyecto.class);
+		restTemplateUpdate.put("http://localhost:5000/updateproyecto/" + proyecto, Proyecto.class);
 	}
 
 }

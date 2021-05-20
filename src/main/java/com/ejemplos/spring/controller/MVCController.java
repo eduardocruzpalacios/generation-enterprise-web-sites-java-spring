@@ -20,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.ejemplos.spring.model.Persona;
 import com.ejemplos.spring.model.Proyecto;
@@ -81,9 +82,17 @@ public class MVCController {
 	}
 
 	// EDITAR PROYECTO
-	@GetMapping("/editarproyecto")
+	@GetMapping("/editarproyecto/{idproyecto}")
+	public String editarProyecto(@PathVariable Integer idproyecto, Model m) {
+		Proyecto p = proyectoService.findById(idproyecto);
+		m.addAttribute("proyecto", p);
+		return "proyectoModificar";
+	}
+	
+	@PutMapping("/updateProyecto")
 	public String updateProyecto(Proyecto proyecto) {
-		proyectoService.saveUpdate(proyecto);
+		log.info("proyectoService.saveAdd(proyecto)");
+		proyectoService.saveAdd(proyecto);
 		return "redirect:/adminproyectos";
 	}
 
