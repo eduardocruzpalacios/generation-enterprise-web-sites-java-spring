@@ -23,13 +23,10 @@ public interface ProyectoService {
 
 	// Método para guardar
 	public Proyecto saveAdd(Proyecto proyecto);
-	
+
 	// Método para borrar
 	public void deleteById(int idproyecto);
-	
+
 	// Método para modificar
 	public void saveUpdate(Proyecto proyecto);
-	
-	
-
 }

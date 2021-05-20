@@ -41,19 +41,17 @@ public class ProyectoServiceImpl implements ProyectoService {
 		return pSave;
 	}
 
-	//Método para eliminar
+	// Método para eliminar
 	@Override
 	public void deleteById(int idproyecto) {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.delete("http://localhost:5000/eliminarproyecto/" + idproyecto);
 	}
-	
-	//Método para modificar
+
+	// Método para modificar
 	public void saveUpdate(Proyecto proyecto) {
 		RestTemplate restTemplateUpdate = new RestTemplate();
 		restTemplateUpdate.put("http://localhost:5000/editarproyecto/", proyecto, Proyecto.class);
 	}
-
-	
 
 }
