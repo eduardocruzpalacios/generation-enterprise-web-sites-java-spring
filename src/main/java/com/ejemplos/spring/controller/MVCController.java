@@ -160,7 +160,8 @@ public class MVCController {
 	}
 
 	@GetMapping("/equipoAddNuevo")
-	public String getAdminEquipoAddNuevo() {
+	public String getAdminEquipoAddNuevo(Model model) {
+		model.addAttribute("persona", new Persona());
 		return "equipoAddNuevo";
 	}
 }
