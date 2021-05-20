@@ -13,10 +13,7 @@
     <!--fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -44,23 +41,24 @@
             <div class="contenedor">
                 <div class="contenedor-interior">
                     <label for="nombre">Nombre</label>
-                    <input type="text">
+                    <input type="text" required maxlength="45">
                 </div>
                 <div class="contenedor-interior">
                     <label for="email">Email</label>
-                    <input type="mail">
+                    <input type="mail" required maxlength="45">
                 </div>
 
                 <div class="contenedor-interior">
                     <label for="mensaje">Mensaje</label>
-                    <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <textarea name="mensaje" id="" cols="30" rows="10" required></textarea>
+                    <button type="submit">Enviar</button>
                 </div>
             </div>
 
         </form>
 
     </section>
+
     <footer>
         <div class="copyright">
             <p>Copyright &copy; 2021 NextoMarket. All rights reserved.</p>
