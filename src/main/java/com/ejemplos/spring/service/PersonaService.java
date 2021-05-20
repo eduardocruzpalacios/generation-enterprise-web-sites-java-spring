@@ -27,6 +27,9 @@ public interface PersonaService {
 	// Método para borrar
 	public void deleteById(int idpersona);
 
+	// Método para localizar
+	public Persona findById(int idpersona);
+
 	// Método para modificar
-	public void saveUpdate(Persona persona);
+	public void updatePersona(Persona persona);
 }

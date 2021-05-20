@@ -50,7 +50,7 @@
                 </td>
                 <td th:text="${persona.cargo}" />
                 <td>
-                    <a th:href="@{/editarequipo}">Editar</a>
+                    <a th:href="@{/editarequipo/{idpersona}(idpersona=${persona.idpersona})}">Modificar</a>
                     <a th:href="@{/eliminarpersona/{idpersona}(idpersona=${persona.idpersona})}">Eliminar</a>
                 </td>
 

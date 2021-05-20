@@ -47,11 +47,18 @@ public class PersonaServiceImpl implements PersonaService {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.delete("http://localhost:5000/eliminarpersona/" + idpersona);
 	}
+	
+	//Método para localizar
+		public Persona findById(int idpersona) {
+			RestTemplate restTemplate = new RestTemplate();
+			Persona[] p = restTemplate.getForObject("http://localhost:5000/localizarpersona/" + idpersona, Persona[].class);
+			 return p[0];
+		}
 
 	// Método para modificar
-	public void saveUpdate(Persona persona) {
-		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.put("http://localhost:5000/editarequipo", persona);
-	}
+		public void updatePersona(Persona persona) {
+			RestTemplate restTemplateUpdate = new RestTemplate();
+			restTemplateUpdate.put("http://localhost:5000/updatePersona/" + persona.getIdpersona(), persona, Persona.class);
+		}
 
 }

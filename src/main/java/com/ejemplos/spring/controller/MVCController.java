@@ -20,7 +20,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import com.ejemplos.spring.model.Persona;
 import com.ejemplos.spring.model.Proyecto;
@@ -53,13 +52,6 @@ public class MVCController {
 
 	}
 
-	// EDITAR PERSONA
-	@GetMapping("/editarequipo")
-	public String updatePersona(Persona persona) {
-		personaService.saveUpdate(persona);
-		return "redirect:/adminequipo";
-	}
-
 	// PROYECTO----------------------------------------
 
 	@Autowired
@@ -88,11 +80,14 @@ public class MVCController {
 		m.addAttribute("proyecto", p);
 		return "proyectoModificar";
 	}
-	
+
+	@Autowired
+	private ProyectoService proyectoServiceUpdate;
+
 	@PostMapping("/updateproyecto")
 	public String updateProyecto(Proyecto proyecto) {
-		proyectoService.updateProyecto(proyecto);
-		return "adminproyectos";
+		proyectoServiceUpdate.updateProyecto(proyecto);
+		return "redirect:/adminproyectos";
 	}
 
 	// ADMINISTRACION---------------------------------------
@@ -119,6 +114,24 @@ public class MVCController {
 		return "equipoAddNuevo";
 	}
 
+	// EDITAR PROYECTO
+
+	@GetMapping("/editarequipo/{idpersona}")
+	public String editarEquipo(@PathVariable Integer idpersona, Model m) {
+		Persona p = personaService.findById(idpersona);
+		m.addAttribute("persona", p);
+		return "equipoModificar";
+	}
+
+	@Autowired
+	private PersonaService personaServiceUpdate;
+
+	@PostMapping("/updatepersona")
+	public String updatePersona(Persona persona) {
+		personaServiceUpdate.updatePersona(persona);
+		return "redirect:/adminequipo";
+	}
+
 	// ADMINSITRAR PROYECTOS
 
 	@Autowired
@@ -136,7 +149,7 @@ public class MVCController {
 		return "proyectoAddNuevo";
 	}
 
-	// FRONT--------------------------------------------------
+	// FRONT-OFFICE --------------------------------------------------
 
 	@GetMapping("/home")
 	public String getHome() {
