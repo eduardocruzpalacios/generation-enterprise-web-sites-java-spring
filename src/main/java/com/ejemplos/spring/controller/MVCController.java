@@ -23,8 +23,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.ejemplos.spring.model.Persona;
 import com.ejemplos.spring.model.Proyecto;
-import com.ejemplos.spring.service.CargoService;
-import com.ejemplos.spring.service.ClienteService;
 import com.ejemplos.spring.service.PersonaService;
 import com.ejemplos.spring.service.ProyectoService;
 
@@ -33,45 +31,20 @@ public class MVCController {
 
 	private static final Logger log = LoggerFactory.getLogger(MVCController.class);
 
-	@Autowired
-	private CargoService cargoService;
-
-	// listar las cargos
-	@GetMapping("/cargo")
-	public String getCargo(Model model) {
-		model.addAttribute("listarCargos", cargoService.findAll());
-		return "ListarCargos";
-	}
-
-	@Autowired
-	private ClienteService clienteService;
-
-	// Listar Clientes
-	@GetMapping("/clientes")
-	public String getClientes(Model model) {
-		model.addAttribute("listarClientes", clienteService.findAll());
-		return "ListarClientes";
-	}
+	// EQUIPO---------------------------------------
 
 	@Autowired
 	private PersonaService personaService;
 
-	// listar las personas del equipo
-	@GetMapping("/equipo")
-	public String getEquipo(Model model) {
-		model.addAttribute("listarPersonas", personaService.findAll());
-		return "equipo";
-	}
-
-	// Guardar persona
+	// AÑADIR PERSONA
 	@PostMapping("/addpersona")
 	public String savePersona(Persona persona) {
-		//log.info("----" + personaService.saveAdd(persona));
+		// log.info("----" + personaService.saveAdd(persona));
 		personaService.saveAdd(persona);
 		return "redirect:/adminequipo";
 	}
 
-	// Eliminar personas
+	// ELIMINAR PERSONA
 	@GetMapping("/eliminarpersona/{idpersona}")
 	public String deleteByIdPersona(@PathVariable Integer idpersona) {
 		personaService.deleteById(idpersona);
@@ -79,25 +52,19 @@ public class MVCController {
 
 	}
 
-	// Modificar persona
+	// EDITAR PERSONA
 	@GetMapping("/editarequipo")
 	public String updatePersona(Persona persona) {
 		personaService.saveUpdate(persona);
 		return "redirect:/adminequipo";
 	}
 
+	// PROYECTO----------------------------------------
+
 	@Autowired
 	private ProyectoService proyectoService;
 
-	// Listar Proyectos
-	@GetMapping("/proyectos")
-	public String getProyectos(Model model) {
-		log.info("----" + proyectoService.findAll());
-		model.addAttribute("listaProyectos", proyectoService.findAll());
-		return "proyectos";
-	}
-
-	// Guardar proyecto
+	// AÑADIR PROYECTO
 	@PostMapping("/addproyecto")
 	public String saveProyecto(Proyecto proyecto) {
 		log.info("proyectoService.saveAdd(proyecto)");
@@ -105,7 +72,7 @@ public class MVCController {
 		return "redirect:/adminproyectos";
 	}
 
-	// Eliminar proyecto
+	// ELIMINAR PROYECTO
 	@GetMapping("/eliminarproyecto/{idproyecto}")
 	public String deleteByIdProyecto(@PathVariable Integer idproyecto) {
 		proyectoService.deleteById(idproyecto);
@@ -113,27 +80,21 @@ public class MVCController {
 
 	}
 
-	// Modificar proyecto
+	// EDITAR PROYECTO
 	@GetMapping("/editarproyecto")
 	public String updateProyecto(Proyecto proyecto) {
 		proyectoService.saveUpdate(proyecto);
 		return "redirect:/adminproyectos";
 	}
 
+	// ADMINISTRACION---------------------------------------
+
 	@GetMapping("/admin")
 	public String getAdmin() {
 		return "admin";
 	}
-	
-	@GetMapping("/home")
-	public String getHome() {
-		return "home";
-	}
-	
-	@GetMapping("/trabajaConNosotros")
-	public String getTrabajaConNosotros() {
-		return "trabajaConNosotros";
-	}
+
+	// ADMINISTRAR EQUIPO
 
 	@Autowired
 	private PersonaService personaAdmin;
@@ -143,6 +104,14 @@ public class MVCController {
 		model.addAttribute("listarPersonas", personaAdmin.findAll());
 		return "adminequipo";
 	}
+
+	@GetMapping("/equipoAddNuevo")
+	public String getAdminEquipoAddNuevo(Model model) {
+		model.addAttribute("persona", new Persona());
+		return "equipoAddNuevo";
+	}
+
+	// ADMINSITRAR PROYECTOS
 
 	@Autowired
 	private ProyectoService proyectoAdmin;
@@ -159,9 +128,36 @@ public class MVCController {
 		return "proyectoAddNuevo";
 	}
 
-	@GetMapping("/equipoAddNuevo")
-	public String getAdminEquipoAddNuevo(Model model) {
-		model.addAttribute("persona", new Persona());
-		return "equipoAddNuevo";
+	// FRONT--------------------------------------------------
+
+	@GetMapping("/home")
+	public String getHome() {
+		return "home";
 	}
+
+	// LISTAR EQUIPO
+	@GetMapping("/equipo")
+	public String getEquipo(Model model) {
+		model.addAttribute("listarPersonas", personaService.findAll());
+		return "equipo";
+	}
+
+	// LISTAR PROYECTOS
+	@GetMapping("/proyectos")
+	public String getProyectos(Model model) {
+		log.info("----" + proyectoService.findAll());
+		model.addAttribute("listaProyectos", proyectoService.findAll());
+		return "proyectos";
+	}
+
+	@GetMapping("/trabajaConNosotros")
+	public String getTrabajaConNosotros() {
+		return "trabajaConNosotros";
+	}
+
+	@GetMapping("/contacto")
+	public String getContacto() {
+		return "contacto";
+	}
+
 }
