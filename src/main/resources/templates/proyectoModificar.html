@@ -21,14 +21,19 @@
 
     <nav>
         <ul>
-            <li><a href="admin">Inicio</a></li>
+            <li><a href="../admin">Inicio</a></li>
             <li><a href="adminproyectos">Gestión de Proyectos</a></li>
             <li><a href="adminequipo">Gestión de Equipo</a></li>
         </ul>
     </nav>
 
     <section class="formulario">
-        <form th:action="@{/addproyecto}" method="post" th:object="${proyecto}">
+        <form th:action="@{/updateproyecto}" method="post" th:object="${proyecto}">
+
+            <p>
+                <label for="idproyecto">Id Proyecto:</label>
+                <input type="text" name="idproyecto" th:field="*{idproyecto}" disabled />
+            </p>
 
             <p>
                 <label for="proyecto">Proyecto:</label>
@@ -37,7 +42,7 @@
 
             <p>
                 <label for="fechafin">Fecha Fin:</label>
-                <input type="date" name="fechafin" th:field="*{fechafin}" maxlength="45"  required />
+                <input type="date" name="fechafin" th:field="*{fechafin}" maxlength="45" required />
             </p>
 
             <p>
@@ -59,7 +64,7 @@
                     <option value="http://.....trivialpreguntas">Trivial de Preguntas</option>
                 </select>
             </p>
-            
+
             <p>
                 <label for="cliente">Cliente:</label>
                 <select name="cliente" th:field="*{cliente.idcliente}">
@@ -76,19 +81,7 @@
             <p><input type="submit" value="Guardar" /></p>
 
         </form>
-        
-        
-        
-        <!--<form action="" method="POST">
-            <p>Proyecto: <input type="text" name="proyecto" required></p>
-            <p>Fecha Finalización: <input type="date" name="fechafin" required></p>
-            <p>Resumen: <input type="text" name="resumen" required></p>
-            <p>Descripción: <input type="text" name="descripcion" required></p>
-            <p>Imagen: <input type="file" name="archivo" value="image/*" required></p>
-            <p>Cliente: <input type="text" name="cliente" required></p>
 
-            <p><input type="submit" value="Guardar"></p>
-        </form>-->
 
     </section>
 
