@@ -28,7 +28,58 @@
     </nav>
 
     <section class="formulario">
-        <form action="" method="POST">
+        <form th:action="@{/addproyecto}" method="post" th:object="${proyecto}">
+
+            <p>
+                <label for="proyecto">Proyecto:</label>
+                <input type="text" name="proyecto" th:field="*{proyecto}" maxlength="45" required />
+            </p>
+
+            <p>
+                <label for="fechafin">Fecha Fin:</label>
+                <input type="date" name="fechafin" th:field="*{fechafin}" maxlength="45"  required />
+            </p>
+
+            <p>
+                <label for="resumen">Resumen:</label>
+                <input type="text" name="resumen" th:field="*{resumen}" maxlength="200" required />
+            </p>
+
+            <p>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" name="descripcion" th:field="*{descripcion}" maxlength="1024" required />
+            </p>
+
+            <p>
+                <label for="proyectoimagen">Elija imagen:</label>
+
+                <select name="proyectoimagen" th:field="*{imagen}">
+                    <option value="http://.....movieflix">MovielFlix</option>
+                    <option value="...">Landing Page Nexto Market</option>
+                    <option value="http://.....trivialpreguntas">Trivial de Preguntas</option>
+                </select>
+            </p>
+            
+            <p>
+                <label for="cliente">Cliente:</label>
+                <select name="cliente" th:field="*{cliente.idcliente}">
+                    <option value="1">Google</option>
+                    <option value="2">Nintendo</option>
+                    <option value="3">Twitter</option>
+                    <option value="4">Samsung</option>
+                    <option value="5">Emirates</option>
+                    <option value="6">Ibermatica</option>
+                    <option value="7">Nexto Market</option>
+                </select>
+            </p>
+
+            <p><input type="submit" value="Guardar" /></p>
+
+        </form>
+        
+        
+        
+        <!--<form action="" method="POST">
             <p>Proyecto: <input type="text" name="proyecto" required></p>
             <p>Fecha Finalización: <input type="date" name="fechafin" required></p>
             <p>Resumen: <input type="text" name="resumen" required></p>
@@ -37,7 +88,7 @@
             <p>Cliente: <input type="text" name="cliente" required></p>
 
             <p><input type="submit" value="Guardar"></p>
-        </form>
+        </form>-->
 
     </section>
 
