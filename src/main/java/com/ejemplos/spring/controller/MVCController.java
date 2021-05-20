@@ -89,11 +89,10 @@ public class MVCController {
 		return "proyectoModificar";
 	}
 	
-	@PutMapping("/updateProyecto")
+	@PostMapping("/updateproyecto")
 	public String updateProyecto(Proyecto proyecto) {
-		log.info("proyectoService.saveAdd(proyecto)");
-		proyectoService.saveAdd(proyecto);
-		return "redirect:/adminproyectos";
+		proyectoService.updateProyecto(proyecto);
+		return "adminproyectos";
 	}
 
 	// ADMINISTRACION---------------------------------------

@@ -58,7 +58,7 @@ public class ProyectoServiceImpl implements ProyectoService {
 	// Método para modificar
 	public void updateProyecto(Proyecto proyecto) {
 		RestTemplate restTemplateUpdate = new RestTemplate();
-		restTemplateUpdate.put("http://localhost:5000/updateproyecto/" + proyecto, Proyecto.class);
+		restTemplateUpdate.put("http://localhost:5000/updateproyecto/" + proyecto.getIdproyecto(), proyecto, Proyecto.class);
 	}
 
 }
