@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Nexto Market</title>
     <!-- estilos -->
-    <link rel="stylesheet" href="../static/styles/reset.css">
-    <link rel="stylesheet" href="../static/styles/nav.css">
-    <link rel="stylesheet" href="../static/styles/contacto.css">
+    <link rel="stylesheet" th:href="@{/styles/nav.css}">
+    <link rel="stylesheet" th:href="@{/styles/reset.css}">
+    <link rel="stylesheet" th:href="@{/styles/contacto.css}">
     <!--fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
 
 <body>
 
-                            <!--HEADER-->
+    <!--HEADER-->
 
     <header>
         <div class="nombre-empresa">
@@ -32,18 +32,40 @@
             <a href="proyectos">Proyectos</a>
             <a href="equipo">Equipo</a>
             <a href="trabajaConNosotros">Trabaja con nosotros</a>
+            <a href="contacto">Contacto</a>
         </nav>
     </header>
 
-                    <!--FORMULARIO CONTACTO-->
+    <!--FORMULARIO CONTACTO-->
 
     <section id="contacto">
 
         <form action="">
+            <div class="contenedor">
+                <div class="contenedor-interior">
+                    <label for="nombre">Nombre</label>
+                    <input type="text">
+                </div>
+                <div class="contenedor-interior">
+                    <label for="email">Email</label>
+                    <input type="mail">
+                </div>
+
+                <div class="contenedor-interior">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
 
         </form>
 
     </section>
+    <footer>
+        <div class="copyright">
+            <p>Copyright &copy; 2021 NextoMarket. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 

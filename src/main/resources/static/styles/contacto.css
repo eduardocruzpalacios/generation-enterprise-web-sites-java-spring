@@ -1,19 +1,72 @@
-/* MQ MOBILE */
-@media (max-width: 687px) {
-    
+#contacto {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-content: center;
+
+    margin: auto;
+
+    background-color: #05476d;
 }
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-content: center;
+
+    width: 100%;
+
+    padding: 3rem;
+
+    margin: 2rem 0rem;
+
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+.contenedor-interior {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-content: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    margin: auto;
+}
+
+label {
+    color: #002c46;
+    text-align: center;
+    padding: 0.4rem;
+}
+
+button {
+    text-align: center;
+    background-color: #002c46;
+    color: #eeeeee;
+}
+
+button:hover {
+    background-color: #014b75;
+    transition: 0.4s;
+}
+
+
+/* MQ MOBILE */
+@media (max-width: 687px) {}
 
 /* MQ TABLET */
-@media (min-width: 688px) and (max-width: 992px) {
-  
-}
+@media (min-width: 688px) and (max-width: 992px) {}
 
 /* MQ PC */
-@media (min-width: 993px) {
-  
-}
+@media (min-width: 993px) {}
 
 /* MQ XL screens */
-@media (min-width: 1312px) {
-    
-}
+@media (min-width: 1312px) {}
