@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.nombre-empresa {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+}
+
+h1 {
+    color: #05476d;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+}
+
+h2 {
+    color: #05476d;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3 {
+    color: #05476d;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+}
+
+h4 {
+    color: #05476d;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+}
+
+h5 {
+    color: #69056d;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+}
+
+p,
+a,
+th,
+li,
+label,
+button {
+    color: rgb(32, 32, 32);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.copyright {
+    align-content: center;
+    background-color: #05476d;
+    border-top: #eeeeee solid 1px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.copyright p {
+    color: #eeeeee;
+}

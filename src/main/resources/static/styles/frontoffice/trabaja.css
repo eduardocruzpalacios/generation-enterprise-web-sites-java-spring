@@ -1,0 +1,46 @@
+.ofertas-trabajo {
+    background-color: #05476d;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 100%;
+}
+
+.ofertas-trabajo h2 {
+    color: #eeeeee;
+    padding: 2rem 0rem;
+}
+
+.contenedor-ofertas-trabajo {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+}
+
+.oferta {
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0rem 0rem 3rem 0rem;
+    padding: 2rem;
+    width: 80%;
+}
+
+.oferta h3,
+h4,
+h5 {
+    padding: 1rem;
+    text-align: center;
+}
+
+.oferta p {
+    padding: 0.2rem;
+    text-align: justify;
+}

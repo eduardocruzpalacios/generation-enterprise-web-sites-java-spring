@@ -1,0 +1,137 @@
+.banner {
+    background-image: url(../../../img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 37.4rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.titulo-aboutus {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 3rem 0rem 3rem;
+    width: 100%;
+}
+
+.row {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+}
+
+.texto {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem 0rem;
+    padding: 2rem;
+    width: 55rem;
+}
+
+.texto#texto1 {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../../../img/aboutus1.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.texto#texto2 {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../../../img/aboutus2.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.row p {
+    color: rgb(32, 32, 32);
+}
+
+.row h2 {
+    color: #510172;
+    font-weight: bold;
+    padding: 3rem 0rem 3rem 0rem;
+}
+
+.row h3 {
+    font-weight: bold;
+}
+
+.row h4 {
+    color: #510172;
+    font-weight: bold;
+}
+
+.footer-rrss {
+    align-content: center;
+    background-color: #12b5cb;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+    width: 100%;
+}
+
+.footer-rrss h2 {
+    color: #eeeeee;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-rrss a {
+    color: #1b2549;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+.footer-rrss a:hover {
+    color: #eeeeee;
+    transition: 0.4s;
+}
+
+.footer-contacto {
+    background-color: #001530;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.footer-contacto .contenedor {
+    padding: 0.4rem;
+    text-align: center;
+}
+
+.footer-contacto .contenedor h2,
+p,
+a {
+    padding: 0.3rem;
+}
+
+.footer-contacto .contenedor h2,
+p {
+    color: #eeeeee;
+}
+
+.footer-contacto .contenedor a {
+    color: #12b5cb;
+    font-size: 1.2rem;
+}
+
+.footer-contacto .contenedor a:hover {
+    color: #eeeeee;
+}
