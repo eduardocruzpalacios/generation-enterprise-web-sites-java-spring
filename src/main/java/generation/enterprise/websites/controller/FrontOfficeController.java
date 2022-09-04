@@ -12,8 +12,13 @@
 */
 package generation.enterprise.websites.controller;
 
+<<<<<<< Updated upstream
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+=======
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> Stashed changes
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,8 +26,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+<<<<<<< Updated upstream
 import generation.enterprise.websites.model.Mensaje;
 import generation.enterprise.websites.service.MensajeService;
+=======
+import generation.enterprise.websites.model.Persona;
+import generation.enterprise.websites.service.PersonaFakeService;
+>>>>>>> Stashed changes
 import generation.enterprise.websites.service.PersonaService;
 import generation.enterprise.websites.service.ProyectoService;
 
@@ -47,7 +57,12 @@ public class FrontOfficeController {
 
 	@GetMapping("/equipo")
 	public String getEquipo(Model model) {
-		model.addAttribute("personas", personaService.findAll());
+		List<Persona> realPersonas = personaService.findAll();
+		List<Persona> fakePersonas = PersonaFakeService.createPersonas(4);
+		List<Persona> personas = new ArrayList<Persona>();
+		realPersonas.forEach(e -> personas.add(e));
+		fakePersonas.forEach(e -> personas.add(e));
+		model.addAttribute("personas", personas);
 		return BASE_URL + "equipo";
 	}
 
