@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestión de Equipo</title>
+    <title>Gestión de Mensajes</title>
     <!-- estilos -->
     <link rel="stylesheet" th:href="@{/styles/back-office.css}" />
     <!-- Google Fonts -->
@@ -16,14 +16,14 @@
   </head>
   <body>
     <header>
-      <h2>Gestión de Equipo</h2>
+      <h2>Gestión de Mensajes</h2>
     </header>
 
     <nav>
       <ul>
         <li><a href="../admin">Inicio</a></li>
         <li><a href="./proyectos">Gestión de Proyectos</a></li>
-        <li><a href="./personas">Gestión de Equipo</a></li>
+        <li><a href="./mensajes">Gestión de Equipo</a></li>
         <li><a href="./mensajes">Gestión de Mensajes</a></li>
       </ul>
     </nav>
@@ -33,34 +33,26 @@
 
       <table>
         <tr>
-          <th>Nombre</th>
-          <th>Apellidos</th>
-          <th>Resumen</th>
-          <th>Foto</th>
-          <th>Cargo</th>
-          <th>Acciones</th>
+          <th>id</th>
+          <th>from</th>
+          <th>fecha</th>
+          <th>subject</th>
+          <th>mensaje</th>
+          <th>¿contestado?</th>
+          <th>respuesta</th>
         </tr>
 
-        <tr th:each="persona: ${personas}">
-          <td th:text="${persona.nombre}" />
-          <td th:text="${persona.apellidos}" />
-          <td th:text="${persona.resumen}" />
-          <td>
-            <img th:src="${persona.foto}" />
-          </td>
-          <td th:text="${persona.cargo.cargo}" />
-          <td>
-            <a th:href="@{/admin/personas/{id}(id=${persona.idpersona})}"
-              >Modificar</a
-            >
-            <a th:href="@{/admin/personas/{id}/delete(id=${persona.idpersona})}"
-              >Eliminar</a
-            >
-          </td>
+        <tr th:each="mensaje: ${mensajes}">
+          <td th:text="${mensaje.idmensaje}" />
+          <td th:text="${mensaje.from}" />
+          <td th:text="${mensaje.fecha}" />
+          <td th:text="${mensaje.subject}" />
+          <td th:text="${mensaje.mensaje}" />
+          <td th:text="${mensaje.respuesta.length() > 0} ? 'Sí' : 'No'" />
+
+          <td th:text="${mensaje.respuesta}" />
         </tr>
       </table>
-
-      <a href="./persona_create">Añadir nuevo registro</a>
     </section>
   </body>
 </html>
