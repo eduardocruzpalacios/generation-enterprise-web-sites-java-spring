@@ -49,11 +49,12 @@
           </td>
           <td th:text="${persona.cargo.cargo}" />
           <td>
-            <a
-              th:href="@{/admin/personas/{id}(id=${persona.idpersona})}"
+            <a th:href="@{/admin/personas/{id}(id=${persona.idpersona})}"
               >Modificar</a
             >
-            <a th:href="@{/admin/personas/{id}/delete(id=${persona.idpersona})}">Eliminar</a>
+            <a th:href="@{/admin/personas/{id}/delete(id=${persona.idpersona})}"
+              >Eliminar</a
+            >
           </td>
         </tr>
       </table>

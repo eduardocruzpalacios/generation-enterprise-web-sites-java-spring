@@ -22,14 +22,18 @@
 
     <nav>
       <ul>
-        <li><a href="admin">Inicio</a></li>
-        <li><a href="adminproyectos">Gestión de Proyectos</a></li>
-        <li><a href="adminequipo">Gestión de Equipo</a></li>
+        <li><a href="../admin">Inicio</a></li>
+        <li><a href="./proyectos">Gestión de Proyectos</a></li>
+        <li><a href="./personas">Gestión de Equipo</a></li>
       </ul>
     </nav>
 
     <section class="formulario">
-      <form th:action="@{/addproyecto}" method="post" th:object="${proyecto}">
+      <form
+        th:action="@{/admin/proyectos/create}"
+        method="post"
+        th:object="${proyecto}"
+      >
         <p>
           <label for="proyecto">Proyecto:</label>
           <input

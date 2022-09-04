@@ -29,7 +29,11 @@
     </nav>
 
     <section class="formulario">
-      <form th:action="@{/admin/personas/create}" method="post" th:object="${persona}">
+      <form
+        th:action="@{/admin/personas/create}"
+        method="post"
+        th:object="${persona}"
+      >
         <p>
           <label for="nombre">Nombre:</label>
           <input type="text" name="nombre" th:field="*{nombre}" required />

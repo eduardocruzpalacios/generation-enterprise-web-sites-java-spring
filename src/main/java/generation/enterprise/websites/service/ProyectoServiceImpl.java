@@ -46,14 +46,14 @@ public class ProyectoServiceImpl implements ProyectoService {
 	@Override
 	public void update(Proyecto proyecto) {
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.put("http://localhost:5000/proyectos/" + proyecto.getIdproyecto() + "update", proyecto,
+		restTemplate.put("http://localhost:5000/proyectos/" + proyecto.getIdproyecto() + "/update", proyecto,
 				Proyecto.class);
 	}
 
 	@Override
 	public void delete(int id) {
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.delete("http://localhost:5000/proyectos/" + id + "delete");
+		restTemplate.delete("http://localhost:5000/proyectos/" + id + "/delete");
 	}
 
 }

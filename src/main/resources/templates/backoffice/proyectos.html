@@ -42,7 +42,7 @@
           <th>Acciones</th>
         </tr>
 
-        <tr th:each="proyecto: ${listaProyectos}">
+        <tr th:each="proyecto: ${proyectos}">
           <td th:text="${proyecto.proyecto}" />
           <td th:text="${proyecto.fechafin}" />
           <td th:text="${proyecto.resumen}" />
@@ -50,21 +50,20 @@
           <td>
             <img th:src="${proyecto.imagen}" />
           </td>
-          <td th:text="${proyecto.cliente}" />
+          <td th:text="${proyecto.cliente.nombre}" />
           <td>
-            <a
-              th:href="@{/editarproyecto/{idproyecto}(idproyecto=${proyecto.idproyecto})}"
+            <a th:href="@{/admin/proyectos/{id}(id=${proyecto.idproyecto})}"
               >Modificar</a
             >
             <a
-              th:href="@{/eliminarproyecto/{idproyecto}(idproyecto=${proyecto.idproyecto})}"
+              th:href="@{/admin/proyectos/{id}/delete(id=${proyecto.idproyecto})}"
               >Eliminar</a
             >
           </td>
         </tr>
       </table>
 
-      <a href="proyectoAddNuevo" class="newrecord">Añadir nuevo registro</a>
+      <a href="./proyecto_create" class="newrecord">Añadir nuevo registro</a>
     </section>
   </body>
 </html>

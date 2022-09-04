@@ -24,11 +24,11 @@ import generation.enterprise.websites.service.PersonaService;
 @Controller
 public class PersonaBackOfficeController {
 
-	@Autowired
-	private PersonaService personaService;
-
 	private final String BASE_URL = "backoffice/";
 	private final String REDIRECT_PERSONAS = "redirect:/admin/personas";
+
+	@Autowired
+	private PersonaService personaService;
 
 	@PostMapping("/admin/personas/create")
 	public String create(Persona persona) {
@@ -56,7 +56,7 @@ public class PersonaBackOfficeController {
 	}
 
 	@PostMapping("/admin/personas/update")
-	public String updatePersona(Persona persona) {
+	public String update(Persona persona) {
 		personaService.update(persona);
 		return REDIRECT_PERSONAS;
 	}

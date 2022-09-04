@@ -22,14 +22,18 @@
 
     <nav>
       <ul>
-        <li><a href="../admin">Inicio</a></li>
-        <li><a href="./proyectos">Gestión de Proyectos</a></li>
-        <li><a href="./personas">Gestión de Equipo</a></li>
+        <li><a href="../../admin">Inicio</a></li>
+        <li><a href="../proyectos">Gestión de Proyectos</a></li>
+        <li><a href="../personas">Gestión de Equipo</a></li>
       </ul>
     </nav>
 
     <section class="formulario">
-      <form th:action="@{/admin/personas/update}" method="post" th:object="${persona}">
+      <form
+        th:action="@{/admin/personas/update}"
+        method="post"
+        th:object="${persona}"
+      >
         <input type="hidden" name="idpersona" th:field="*{idpersona}" />
 
         <p>

@@ -25,51 +25,48 @@ import generation.enterprise.websites.service.ProyectoService;
 @Controller
 public class ProyectoBackOfficeController {
 
+	private final String BASE_URL = "backoffice/";
+	private final String REDIRECT_PROYECTOS = "redirect:/admin/proyectos";
+
 	@Autowired
 	private ProyectoService proyectoService;
 
-	@PostMapping("/addproyecto")
-	public String saveProyecto(Proyecto proyecto) {
+	@PostMapping("/admin/proyectos/create")
+	public String create(Proyecto proyecto) {
 		proyectoService.create(proyecto);
-		return "redirect:/adminproyectos";
+		return REDIRECT_PROYECTOS;
 	}
 
-	@GetMapping("/eliminarproyecto/{idproyecto}")
-	public String deleteByIdProyecto(@PathVariable Integer idproyecto) {
-		proyectoService.delete(idproyecto);
-		return "redirect:/adminproyectos";
-
-	}
-
-	@GetMapping("/editarproyecto/{idproyecto}")
-	public String editarProyecto(@PathVariable Integer idproyecto, Model m) {
-		Proyecto p = proyectoService.findById(idproyecto);
-		m.addAttribute("proyecto", p);
-		return "proyectoModificar";
-	}
-
-	@Autowired
-	private ProyectoService proyectoServiceUpdate;
-
-	@PostMapping("/updateproyecto")
-	public String updateProyecto(Proyecto proyecto) {
-		proyectoServiceUpdate.update(proyecto);
-		return "redirect:/adminproyectos";
-	}
-
-	@Autowired
-	private ProyectoService proyectoAdmin;
-
-	@GetMapping("/adminproyectos")
-	public String getAdminProyectos(Model model) {
-		model.addAttribute("listaProyectos", proyectoAdmin.findAll());
-		return "adminproyectos";
-	}
-
-	@GetMapping("/proyectoAddNuevo")
-	public String getAdminProyectoAddNuevo(Model model) {
+	@GetMapping("/admin/proyecto_create")
+	public String createForm(Model model) {
 		model.addAttribute("proyecto", new Proyecto());
-		return "proyectoAddNuevo";
+		return BASE_URL + "proyecto_create";
+	}
+
+	@GetMapping("/admin/proyectos")
+	public String findAll(Model model) {
+		model.addAttribute("proyectos", proyectoService.findAll());
+		return BASE_URL + "proyectos";
+	}
+
+	@GetMapping("/admin/proyectos/{id}")
+	public String updateForm(@PathVariable int id, Model model) {
+		Proyecto proyecto = proyectoService.findById(id);
+		model.addAttribute("proyecto", proyecto);
+		return BASE_URL + "proyecto_update";
+	}
+
+	@PostMapping("/admin/proyectos/update")
+	public String update(Proyecto proyecto) {
+		proyectoService.update(proyecto);
+		return REDIRECT_PROYECTOS;
+	}
+
+	@GetMapping("/admin/proyectos/{id}/delete")
+	public String delete(@PathVariable int id) {
+		proyectoService.delete(id);
+		return REDIRECT_PROYECTOS;
+
 	}
 
 }
