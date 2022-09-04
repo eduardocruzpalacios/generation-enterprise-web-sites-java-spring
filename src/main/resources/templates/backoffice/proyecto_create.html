@@ -119,13 +119,11 @@
         <p>
           <label for="cliente">Cliente:</label>
           <select name="cliente" th:field="*{cliente.idcliente}">
-            <option value="1">Google</option>
-            <option value="2">Nintendo</option>
-            <option value="3">Twitter</option>
-            <option value="4">Samsung</option>
-            <option value="5">Emirates</option>
-            <option value="6">Ibermatica</option>
-            <option value="7">Nexto Market</option>
+            <option
+              th:each="cliente: ${clientes}"
+              th:value="${cliente.idcliente}"
+              th:text="${cliente.nombre}"
+            ></option>
           </select>
         </p>
 

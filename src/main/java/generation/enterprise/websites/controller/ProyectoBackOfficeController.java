@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import generation.enterprise.websites.model.Proyecto;
+import generation.enterprise.websites.service.ClienteService;
 import generation.enterprise.websites.service.ProyectoService;
 
 @Controller
@@ -31,6 +32,9 @@ public class ProyectoBackOfficeController {
 	@Autowired
 	private ProyectoService proyectoService;
 
+	@Autowired
+	private ClienteService clienteService;
+
 	@PostMapping("/admin/proyectos/create")
 	public String create(Proyecto proyecto) {
 		proyectoService.create(proyecto);
@@ -40,6 +44,7 @@ public class ProyectoBackOfficeController {
 	@GetMapping("/admin/proyecto_create")
 	public String createForm(Model model) {
 		model.addAttribute("proyecto", new Proyecto());
+		model.addAttribute("clientes", clienteService.findAll());
 		return BASE_URL + "proyecto_create";
 	}
 
@@ -53,6 +58,7 @@ public class ProyectoBackOfficeController {
 	public String updateForm(@PathVariable int id, Model model) {
 		Proyecto proyecto = proyectoService.findById(id);
 		model.addAttribute("proyecto", proyecto);
+		model.addAttribute("clientes", clienteService.findAll());
 		return BASE_URL + "proyecto_update";
 	}
 
@@ -66,7 +72,6 @@ public class ProyectoBackOfficeController {
 	public String delete(@PathVariable int id) {
 		proyectoService.delete(id);
 		return REDIRECT_PROYECTOS;
-
 	}
 
 }
