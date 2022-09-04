@@ -1,0 +1,23 @@
+.menu-nav {
+    align-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+}
+
+.menu-nav a {
+    color: rgb(32, 32, 32);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu-nav a:hover {
+    color: rgb(32, 148, 163);
+    transition: 0.3s;
+}

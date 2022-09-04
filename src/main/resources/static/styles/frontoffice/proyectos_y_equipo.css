@@ -1,0 +1,55 @@
+
+.contenido {
+    background-color: #05476d;
+}
+
+h2 {
+    color: #eeeeee;
+    padding: 2rem 0rem;
+}
+
+.contenedor {
+    align-content: center;
+    background-color: rgba(238, 238, 238, 0.3);
+    border-bottom: #05476d solid 1rem;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 40%;
+}
+
+.contenedor-imagen {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 3rem 0rem 0rem 0rem;
+}
+
+.contenedor-descripcion {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    padding: 2rem 0rem;
+    width: 50%;
+
+}
+
+.contenedor-descripcion p {
+    color: #eeeeee;
+    text-align: center;
+}
+
+.contenedor-descripcion .destacado {
+    color: #69056d;
+}
+
+#titulo-proyecto {
+    color: #002a42;
+}
