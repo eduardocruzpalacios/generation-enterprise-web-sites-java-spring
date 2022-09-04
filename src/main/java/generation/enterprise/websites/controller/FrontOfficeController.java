@@ -12,13 +12,10 @@
 */
 package generation.enterprise.websites.controller;
 
-<<<<<<< Updated upstream
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-=======
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> Stashed changes
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,13 +23,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-<<<<<<< Updated upstream
 import generation.enterprise.websites.model.Mensaje;
-import generation.enterprise.websites.service.MensajeService;
-=======
 import generation.enterprise.websites.model.Persona;
+import generation.enterprise.websites.service.MensajeService;
 import generation.enterprise.websites.service.PersonaFakeService;
->>>>>>> Stashed changes
 import generation.enterprise.websites.service.PersonaService;
 import generation.enterprise.websites.service.ProyectoService;
 
