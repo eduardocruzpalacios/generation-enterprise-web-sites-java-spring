@@ -72,15 +72,11 @@
         <p>
           <label for="cargo">Cargo:</label>
           <select name="cargo" th:field="*{cargo.idcargo}">
-            <option value="1">CEO</option>
-            <option value="2">Gestor de Proyectos</option>
-            <option value="3">Front-End Dev</option>
-            <option value="4">Back-End Dev</option>
-            <option value="5">Sistemas Dev</option>
-            <option value="6">BBDD Dev</option>
-            <option value="7">Junior Dev</option>
-            <option value="8">Contable</option>
-            <option value="9">Administrativo</option>
+            <option
+              th:each="cargo: ${cargos}"
+              th:value="${cargo.idcargo}"
+              th:text="${cargo.cargo}"
+            ></option>
           </select>
         </p>
 

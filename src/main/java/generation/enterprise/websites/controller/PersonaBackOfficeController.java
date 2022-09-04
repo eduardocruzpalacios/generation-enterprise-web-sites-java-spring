@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import generation.enterprise.websites.model.Persona;
+import generation.enterprise.websites.service.CargoService;
 import generation.enterprise.websites.service.PersonaService;
 
 @Controller
@@ -30,6 +31,9 @@ public class PersonaBackOfficeController {
 	@Autowired
 	private PersonaService personaService;
 
+	@Autowired
+	private CargoService cargoService;
+
 	@PostMapping("/admin/personas/create")
 	public String create(Persona persona) {
 		personaService.create(persona);
@@ -39,6 +43,7 @@ public class PersonaBackOfficeController {
 	@GetMapping("/admin/persona_create")
 	public String createForm(Model model) {
 		model.addAttribute("persona", new Persona());
+		model.addAttribute("cargos", cargoService.findAll());
 		return BASE_URL + "persona_create";
 	}
 
@@ -52,6 +57,7 @@ public class PersonaBackOfficeController {
 	public String updateForm(@PathVariable int id, Model model) {
 		Persona persona = personaService.findById(id);
 		model.addAttribute("persona", persona);
+		model.addAttribute("cargos", cargoService.findAll());
 		return BASE_URL + "persona_update";
 	}
 
