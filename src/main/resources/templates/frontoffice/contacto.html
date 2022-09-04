@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,28 +40,50 @@
     <!--FORMULARIO CONTACTO-->
 
     <section id="contacto">
-      <form action="">
+      <form
+        th:action="@{/mensajes/create}"
+        method="post"
+        th:object="${mensaje}"
+      >
         <div class="contenedor">
           <div class="contenedor-interior">
             <label for="nombre">Nombre</label>
-            <input type="text" required maxlength="45" />
+            <input
+              type="text"
+              name="nombre"
+              required
+            />
           </div>
           <div class="contenedor-interior">
-            <label for="email">Email</label>
-            <input type="email" required maxlength="45" />
+            <label for="subject">Asunto</label>
+            <input
+              type="text"
+              name="subject"
+              th:field="*{subject}"
+              required
+            />
+          </div>
+          <div class="contenedor-interior">
+            <label for="from">Email</label>
+            <input
+              type="email"
+              name="from"
+              th:field="*{from}"
+              required
+            />
           </div>
 
           <div class="contenedor-interior">
             <label for="mensaje">Mensaje</label>
             <textarea
               name="mensaje"
-              id=""
               cols="30"
               rows="10"
+              th:field="*{mensaje}"
               required
             ></textarea>
-            <button type="submit">Enviar</button>
           </div>
+          <button type="submit">Enviar</button>
         </div>
       </form>
     </section>

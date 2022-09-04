@@ -12,16 +12,24 @@
 */
 package generation.enterprise.websites.controller;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import generation.enterprise.websites.model.Mensaje;
+import generation.enterprise.websites.service.MensajeService;
 import generation.enterprise.websites.service.PersonaService;
 import generation.enterprise.websites.service.ProyectoService;
 
 @Controller
 public class FrontOfficeController {
+
+	private final String BASE_URL = "frontoffice/";
 
 	@Autowired
 	private PersonaService personaService;
@@ -29,7 +37,8 @@ public class FrontOfficeController {
 	@Autowired
 	private ProyectoService proyectoService;
 
-	private final String BASE_URL = "frontoffice/";
+	@Autowired
+	private MensajeService mensajeService;
 
 	@GetMapping("/home")
 	public String getHome() {
@@ -54,7 +63,17 @@ public class FrontOfficeController {
 	}
 
 	@GetMapping("/contacto")
-	public String getContacto() {
+	public String getContacto(Model model) {
+		model.addAttribute("mensaje", new Mensaje());
+		return BASE_URL + "contacto";
+	}
+
+	@PostMapping("/mensajes/create")
+	public String createMensaje(Mensaje mensaje) {
+		LocalDateTime now = LocalDateTime.now();
+		mensaje.setFecha(Timestamp.valueOf(now));
+		mensaje.setRespuesta("");
+		mensajeService.create(mensaje);
 		return BASE_URL + "contacto";
 	}
 
