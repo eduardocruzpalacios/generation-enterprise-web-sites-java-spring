@@ -12,8 +12,8 @@ body {
 
 a {
     color: dodgerblue;
-    text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 a:hover {
@@ -69,7 +69,6 @@ a {
 header {
     background-color: #111111;
     color: #eeeeee;
-
     padding: 1.5rem 3rem;
 }
 
@@ -77,21 +76,19 @@ header {
 
 nav {
     background-color: #444444;
-    width: 100%;
     height: 50px;
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 nav ul {
-    list-style-type: none;
-
+    align-items: center;
+    column-gap: 30px;
     display: flex;
     flex-direction: row;
-    column-gap: 30px;
-    justify-content: center;
-    align-items: center;
-
     height: 100%;
+    justify-content: center;
+    list-style-type: none;
 }
 
 nav a {
@@ -102,13 +99,11 @@ nav a {
 
 section {
     background-color: #ffffff;
-
+    border-radius: 12px;
+    box-shadow: 0 0 3px 3px #666666;
     margin: 0 auto;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
-
-    border-radius: 12px;
-    box-shadow: 0 0 3px 3px #666666;
 }
 
 /* adminproyectos y adminequipo */
@@ -118,8 +113,8 @@ section.tabla h3 {
 }
 
 section.tabla {
-    width: 90%;
     overflow-x: auto;
+    width: 90%;
 }
 
 th {
@@ -132,8 +127,8 @@ td {
 }
 
 table {
-    width: 100%;
     margin-bottom: 1rem;
+    width: 100%;
 }
 
 th, td {
@@ -146,8 +141,8 @@ th {
 }
 
 table img {
-    width: 100px;
     height: auto;
+    width: 100px;
 }
 
 /* formulario nuevo proyecto/persona */
@@ -157,10 +152,10 @@ section.formulario {
 }
 
 form {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     row-gap: 1rem;
 }
 
@@ -170,22 +165,21 @@ form label {
 }
 
 form input, form select {
-    border: 0;
-    padding: 5px;
-    outline: 0;
-
     background-color: #111111;
+    border: 0;
     color: #eeeeee;
+    outline: 0;
+    padding: 5px;
     width: 150px;
 }
 
 form input[type="submit"] {
-    background-color: dodgerblue;
     align-self: center;
-    margin: 0 auto;
-    font-size: 1rem;
+    background-color: dodgerblue;
     border-radius: 12px;
     box-shadow: 0 0 3px 3px #666666;
+    font-size: 1rem;
+    margin: 0 auto;
 }
 
 form input[type="submit"]:hover {

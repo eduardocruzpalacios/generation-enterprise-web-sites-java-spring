@@ -1,0 +1,48 @@
+#contacto {
+    align-content: center;
+    background-color: #05476d;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.contenedor {
+    align-content: center;
+    background-color: rgba(238, 238, 238, 0.3);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0rem;
+    padding: 3rem;
+    width: 100%;
+}
+
+.contenedor-interior {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+}
+
+label {
+    color: #002c46;
+    padding: 0.4rem;
+    text-align: center;
+}
+
+button {
+    background-color: #002c46;
+    color: #eeeeee;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #014b75;
+    transition: 0.4s;
+}

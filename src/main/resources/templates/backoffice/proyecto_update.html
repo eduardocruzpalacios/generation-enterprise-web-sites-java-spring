@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modificar proyecto</title>
+    <!-- estilos -->
+    <link rel="stylesheet" th:href="@{/styles/back-office.css}" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h2>Modificar proyecto</h2>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="../../admin">Inicio</a></li>
+        <li><a href="../proyectos">Gestión de Proyectos</a></li>
+        <li><a href="../personas">Gestión de Equipo</a></li>
+      </ul>
+    </nav>
+
+    <section class="formulario">
+      <form
+        th:action="@{/admin/proyectos/update}"
+        method="post"
+        th:object="${proyecto}"
+      >
+        <input type="hidden" name="idproyecto" th:field="*{idproyecto}" />
+
+        <p>
+          <label for="proyecto">Proyecto:</label>
+          <input
+            type="text"
+            name="proyecto"
+            th:field="*{proyecto}"
+            maxlength="45"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="fechafin">Fecha Fin:</label>
+          <input
+            type="date"
+            name="fechafin"
+            th:field="*{fechafin}"
+            maxlength="45"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="resumen">Resumen:</label>
+          <input
+            type="text"
+            name="resumen"
+            th:field="*{resumen}"
+            maxlength="200"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="descripcion">Descripción:</label>
+          <input
+            type="text"
+            name="descripcion"
+            th:field="*{descripcion}"
+            maxlength="1024"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="proyectoimagen">Elija imagen:</label>
+
+          <select name="proyectoimagen" th:field="*{imagen}">
+            <option
+              value="https://res.cloudinary.com/da0kscqzj/image/upload/v1621502297/proyectos/movieflix_ftzby8.jpg"
+            >
+              MovieFlix
+            </option>
+            <option
+              value="https://res.cloudinary.com/da0kscqzj/image/upload/v1621502300/proyectos/landing_page_nexto_market_eezjby.png"
+            >
+              Landing Page Nexto Market
+            </option>
+            <option
+              value="https://res.cloudinary.com/da0kscqzj/image/upload/v1621502297/proyectos/trivia_kr35ck.png"
+            >
+              Trivial de Preguntas
+            </option>
+            <option
+              value="https://res.cloudinary.com/da0kscqzj/image/upload/v1621502298/proyectos/cms_emirates_c2ngw5.png"
+            >
+              CMS Emirates
+            </option>
+            <option
+              value="https://res.cloudinary.com/da0kscqzj/image/upload/v1621502299/proyectos/tienda_samsung_yavmoo.png"
+            >
+              Tienda online Samsung
+            </option>
+            <option
+              value="https://res.cloudinary.com/da0kscqzj/image/upload/v1621502300/proyectos/pagina_web_nintendo_v37cwm.png"
+            >
+              Web corporativa Nintendo
+            </option>
+          </select>
+        </p>
+
+        <p>
+          <label for="cliente">Cliente:</label>
+          <select name="cliente" th:field="*{cliente.idcliente}">
+            <option value="1">Google</option>
+            <option value="2">Nintendo</option>
+            <option value="3">Twitter</option>
+            <option value="4">Samsung</option>
+            <option value="5">Emirates</option>
+            <option value="6">Ibermatica</option>
+            <option value="7">Nexto Market</option>
+          </select>
+        </p>
+
+        <p><input type="submit" value="Guardar" /></p>
+      </form>
+    </section>
+  </body>
+</html>
