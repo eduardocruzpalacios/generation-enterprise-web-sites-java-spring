@@ -1,4 +1,3 @@
-
 /*
 
 *Fecha: 14/05/2021
@@ -28,42 +27,44 @@ public class PersonaBackOfficeController {
 	@Autowired
 	private PersonaService personaService;
 
-	@GetMapping("/adminpersonas")
-	public String getAdminEquipo(Model model) {
-		model.addAttribute("personas", personaService.findAll());
-		return "adminpersonas";
-	}
+	private final String BASE_URL = "backoffice/";
+	private final String REDIRECT_PERSONAS = "redirect:/admin/personas";
 
-	@GetMapping("/equipoAddNuevo")
-	public String getAdminEquipoAddNuevo(Model model) {
-		model.addAttribute("persona", new Persona());
-		return "equipoAddNuevo";
-	}
-
-	@PostMapping("/addpersona")
-	public String savePersona(Persona persona) {
+	@PostMapping("/admin/personas/create")
+	public String create(Persona persona) {
 		personaService.create(persona);
-		return "redirect:/adminequipo";
+		return REDIRECT_PERSONAS;
 	}
 
-	@GetMapping("/eliminarpersona/{idpersona}")
-	public String deleteByIdPersona(@PathVariable Integer idpersona) {
-		personaService.delete(idpersona);
-		return "redirect:/adminequipo";
-
+	@GetMapping("/admin/persona_create")
+	public String createForm(Model model) {
+		model.addAttribute("persona", new Persona());
+		return BASE_URL + "persona_create";
 	}
 
-	@GetMapping("/editarequipo/{idpersona}")
-	public String editarEquipo(@PathVariable Integer idpersona, Model m) {
-		Persona p = personaService.findById(idpersona);
-		m.addAttribute("persona", p);
-		return "equipoModificar";
+	@GetMapping("/admin/personas")
+	public String findAll(Model model) {
+		model.addAttribute("personas", personaService.findAll());
+		return BASE_URL + "personas";
 	}
 
-	@PostMapping("/updatepersona")
+	@GetMapping("/admin/personas/{id}")
+	public String updateForm(@PathVariable int id, Model model) {
+		Persona persona = personaService.findById(id);
+		model.addAttribute("persona", persona);
+		return BASE_URL + "persona_update";
+	}
+
+	@PostMapping("/admin/personas/update")
 	public String updatePersona(Persona persona) {
 		personaService.update(persona);
-		return "redirect:/adminequipo";
+		return REDIRECT_PERSONAS;
+	}
+
+	@GetMapping("/admin/personas/{id}/delete")
+	public String delete(@PathVariable int id) {
+		personaService.delete(id);
+		return REDIRECT_PERSONAS;
 	}
 
 }

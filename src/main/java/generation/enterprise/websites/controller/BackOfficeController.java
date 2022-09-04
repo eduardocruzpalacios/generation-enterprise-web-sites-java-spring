@@ -1,4 +1,3 @@
-
 /*
 
 *Fecha: 14/05/2021
@@ -18,9 +17,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class BackOfficeController {
 
+	private final String BASE_URL = "backoffice/";
+
 	@GetMapping("/admin")
 	public String getAdmin() {
-		return "admin";
+		return BASE_URL + "admin";
 	}
 
 }
