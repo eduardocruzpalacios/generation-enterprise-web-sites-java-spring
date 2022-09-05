@@ -44,6 +44,14 @@ public class ProyectoServiceImpl implements ProyectoService {
 	}
 
 	@Override
+	public List<Proyecto> findByCliente(int idcliente) {
+		RestTemplate restTemplate = new RestTemplate();
+		Proyecto[] proyectos = restTemplate.getForObject("http://localhost:5000/proyectos/cliente/" + idcliente,
+				Proyecto[].class);
+		return Arrays.asList(proyectos);
+	}
+
+	@Override
 	public void update(Proyecto proyecto) {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.put("http://localhost:5000/proyectos/" + proyecto.getIdproyecto() + "/update", proyecto,

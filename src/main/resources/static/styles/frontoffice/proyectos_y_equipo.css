@@ -1,4 +1,5 @@
 
+
 .contenido {
     background-color: #05476d;
 }
@@ -6,6 +7,19 @@
 h2 {
     color: #eeeeee;
     padding: 2rem 0rem;
+}
+
+.filtro {
+ 	align-items: center;
+	display: flex;
+ 	justify-content: center;
+ 	margin-bottom: 20px;
+}
+
+.filtro-contenido {
+	display: inline-block;
+	margin: 0 auto;
+	width: auto;
 }
 
 .contenedor {

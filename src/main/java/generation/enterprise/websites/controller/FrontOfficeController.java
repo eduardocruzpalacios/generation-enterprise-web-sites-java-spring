@@ -22,9 +22,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import generation.enterprise.websites.model.Cliente;
 import generation.enterprise.websites.model.Mensaje;
 import generation.enterprise.websites.model.Persona;
+import generation.enterprise.websites.model.Proyecto;
+import generation.enterprise.websites.service.ClienteService;
 import generation.enterprise.websites.service.MensajeService;
 import generation.enterprise.websites.service.PersonaFakeService;
 import generation.enterprise.websites.service.PersonaService;
@@ -33,7 +37,8 @@ import generation.enterprise.websites.service.ProyectoService;
 @Controller
 public class FrontOfficeController {
 
-	private final String BASE_URL = "frontoffice/";
+	private final String BASE_URL = "./frontoffice/";
+	private final String REDIRECT_PROYECTOS = "redirect:/proyectos";
 
 	@Autowired
 	private PersonaService personaService;
@@ -43,6 +48,9 @@ public class FrontOfficeController {
 
 	@Autowired
 	private MensajeService mensajeService;
+
+	@Autowired
+	private ClienteService clienteService;
 
 	@GetMapping("/home")
 	public String getHome() {
@@ -63,7 +71,24 @@ public class FrontOfficeController {
 	@GetMapping("/proyectos")
 	public String getProyectos(Model model) {
 		model.addAttribute("proyectos", proyectoService.findAll());
+		model.addAttribute("clientes", clienteService.findAll());
+		model.addAttribute("cliente", new Cliente());
 		return BASE_URL + "proyectos";
+	}
+
+	@GetMapping("/proyectos/cliente")
+	public String getProyectosByCliente(@RequestParam int idcliente, Model model) {
+		if (idcliente == 0) {
+			return REDIRECT_PROYECTOS;
+		} else {
+			List<Proyecto> proyectos = proyectoService.findByCliente(idcliente);
+			model.addAttribute("proyectos", proyectos);
+			model.addAttribute("clientes", clienteService.findAll());
+			Cliente cliente = new Cliente();
+			cliente.setIdcliente(idcliente);
+			model.addAttribute("cliente", cliente);
+			return BASE_URL + "proyectos";
+		}
 	}
 
 	@GetMapping("/trabaja")

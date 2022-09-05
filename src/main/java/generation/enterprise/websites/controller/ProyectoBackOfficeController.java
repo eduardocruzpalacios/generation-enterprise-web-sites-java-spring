@@ -51,6 +51,7 @@ public class ProyectoBackOfficeController {
 	@GetMapping("/admin/proyectos")
 	public String findAll(Model model) {
 		model.addAttribute("proyectos", proyectoService.findAll());
+		model.addAttribute("clientes", clienteService.findAll());
 		return BASE_URL + "proyectos";
 	}
 

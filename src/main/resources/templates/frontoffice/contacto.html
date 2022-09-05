@@ -29,11 +29,11 @@
         <h1>NEXTO MARKET</h1>
       </div>
       <nav class="menu-nav">
-        <a href="home">Home</a>
-        <a href="proyectos">Proyectos</a>
-        <a href="equipo">Equipo</a>
-        <a href="trabaja">Trabaja con nosotros</a>
-        <a href="contacto">Contacto</a>
+        <a href="/home">Home</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/equipo">Equipo</a>
+        <a href="/trabaja">Trabaja con nosotros</a>
+        <a href="/contacto">Contacto</a>
       </nav>
     </header>
 
@@ -48,29 +48,15 @@
         <div class="contenedor">
           <div class="contenedor-interior">
             <label for="nombre">Nombre</label>
-            <input
-              type="text"
-              name="nombre"
-              required
-            />
+            <input type="text" name="nombre" required />
           </div>
           <div class="contenedor-interior">
             <label for="subject">Asunto</label>
-            <input
-              type="text"
-              name="subject"
-              th:field="*{subject}"
-              required
-            />
+            <input type="text" name="subject" th:field="*{subject}" required />
           </div>
           <div class="contenedor-interior">
             <label for="from">Email</label>
-            <input
-              type="email"
-              name="from"
-              th:field="*{from}"
-              required
-            />
+            <input type="email" name="from" th:field="*{from}" required />
           </div>
 
           <div class="contenedor-interior">

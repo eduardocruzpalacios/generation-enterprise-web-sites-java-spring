@@ -34,11 +34,11 @@
         <h1>NEXTO MARKET</h1>
       </div>
       <nav class="menu-nav">
-        <a href="home">Home</a>
-        <a href="proyectos">Proyectos</a>
-        <a href="equipo">Equipo</a>
-        <a href="trabaja">Trabaja con nosotros</a>
-        <a href="contacto">Contacto</a>
+        <a href="/home">Home</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/equipo">Equipo</a>
+        <a href="/trabaja">Trabaja con nosotros</a>
+        <a href="/contacto">Contacto</a>
       </nav>
     </header>
 
@@ -47,7 +47,26 @@
     <section class="contenido">
       <h2>PROYECTOS</h2>
 
-      <!--PROYECTO 1-->
+      <div class="filtro">
+        <div class="filtro-contenido">
+          <form
+            method="get"
+            th:action="@{/proyectos/cliente}"
+            th:object="${cliente}"
+          >
+            <label for="cliente">Empresa cliente:</label>
+            <select name="cliente" class="form-control" th:field="*{idcliente}">
+              <option th:value="0" th:text="Todos"></option>
+              <option
+                th:each="c:${clientes}"
+                th:value="${c.idcliente}"
+                th:text="${c.nombre}"
+              ></option>
+            </select>
+            <input type="submit" value="Filtrar" />
+          </form>
+        </div>
+      </div>
 
       <div class="contenedor" th:each="proyecto: ${proyectos}">
         <div class="contenedor-imagen">
