@@ -24,4 +24,9 @@ public class BackOfficeController {
 		return BASE_URL + "admin";
 	}
 
+	@GetMapping("/login")
+	public String getLogin() {
+		return "login";
+	}
+
 }

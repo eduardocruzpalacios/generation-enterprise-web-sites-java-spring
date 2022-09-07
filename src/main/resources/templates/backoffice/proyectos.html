@@ -26,6 +26,16 @@
         <li><a href="./proyectos">Gestión de Proyectos</a></li>
         <li><a href="./personas">Gestión de Equipo</a></li>
         <li><a href="./mensajes">Gestión de Mensajes</a></li>
+        <li>
+          <span th:inline="text"
+            >Hello [[${#httpServletRequest.remoteUser}]]!</span
+          >
+        </li>
+        <li>
+          <form id="logout" th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out" />
+          </form>
+        </li>
       </ul>
     </nav>
 

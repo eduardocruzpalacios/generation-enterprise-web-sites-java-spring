@@ -35,7 +35,8 @@ td,
 a,
 label,
 input,
-select {
+select,
+span {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -93,6 +94,12 @@ nav ul {
 
 nav a {
     padding: 13px;
+}
+
+/* logout */
+
+span {
+	color: white;
 }
 
 /* section */

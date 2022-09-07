@@ -22,10 +22,20 @@
 
     <nav>
       <ul>
-        <li><a href="./">Inicio</a></li>
+        <li><a href="./admin">Inicio</a></li>
         <li><a href="./admin/proyectos">Gestión de Proyectos</a></li>
         <li><a href="./admin/personas">Gestión de Equipo</a></li>
         <li><a href="./admin/mensajes">Gestión de Mensajes</a></li>
+        <li>
+          <span th:inline="text"
+            >Hello [[${#httpServletRequest.remoteUser}]]!</span
+          >
+        </li>
+        <li>
+          <form id="logout" th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out" />
+          </form>
+        </li>
       </ul>
     </nav>
   </body>
