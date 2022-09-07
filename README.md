@@ -3,7 +3,7 @@ Generation enterprise web sites built with JavaSE-11, Java Spring, Maven, Spring
 ## Public web site
 Accessible via [http://localhost:8080/home](http://localhost:8080/home) once application is running.
 
-### Functionality:
+### Functionality
 - Read all proyectos
 - Filter proyectos by cliente
 - Read all personas
@@ -16,7 +16,7 @@ Protected with Java Spring Security:
 - user: user
 - password: password
 
-### Functionality:
+### Functionality
 - CRUD over proyectos
 - CRUD over personas
 - Read all mensajes
